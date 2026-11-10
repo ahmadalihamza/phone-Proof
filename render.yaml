@@ -1,0 +1,70 @@
+# Review paid service plans and provision secrets before creating this Blueprint.
+# Activation and worker commands: docs/deployment.md
+services:
+  - type: web
+    name: phoneproof-api
+    runtime: docker
+    region: singapore
+    plan: 1c-2g
+    autoDeployTrigger: "off"
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    preDeployCommand: python -m alembic upgrade head
+    dockerCommand: >-
+      sh -c 'exec uvicorn app.main:app --host 0.0.0.0 --port 8000
+      --limit-concurrency 16 --proxy-headers
+      --forwarded-allow-ips="${TRUSTED_PROXY_IPS:-127.0.0.1}"'
+    healthCheckPath: /ready
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: phoneproof-postgres
+          property: connectionString
+      - key: JWT_SECRET
+        sync: false
+      - key: MFA_ENCRYPTION_KEY
+        sync: false
+      - key: REDIS_URL
+        fromService:
+          name: phoneproof-cache
+          type: keyvalue
+          property: connectionString
+      - key: PUBLIC_REPORT_BASE_URL
+        sync: false
+      - key: ALLOWED_HOSTS
+        sync: false
+      - key: TRUSTED_PROXY_IPS
+        sync: false
+      - key: DEVELOPMENT_PAYMENTS
+        value: "false"
+      - key: READINESS_TIMEOUT_SECONDS
+        value: "5"
+      - key: SIGNING_KEY_PATH
+        value: /etc/secrets/report-signing.pem
+      - key: S3_BUCKET
+        sync: false
+      - key: S3_ENDPOINT
+        sync: false
+      - key: S3_REGION
+        sync: false
+      - key: S3_ACCESS_KEY
+        sync: false
+      - key: S3_SECRET_KEY
+        sync: false
+  - type: keyvalue
+    name: phoneproof-cache
+    region: singapore
+    plan: 256mb
+    ipAllowList: []
+    maxmemoryPolicy: noeviction
+    persistenceMode: journal-snapshot
+databases:
+  - name: phoneproof-postgres
+    region: singapore
+    plan: 0.5c-1g
+    postgresMajorVersion: "16"
+    databaseName: phoneproof
+    user: phoneproof
+    ipAllowList: []

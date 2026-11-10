@@ -1,0 +1,14 @@
+# Two-phone demonstration
+
+1. Start the backend using deployment.md. Configure its public report origin with the computer's LAN address. Install the debug APK on two Android 10+ phones on the same network.
+2. On both phones, open Account, set `http://COMPUTER_IP:8000/api/v1/` before signing in, and use the same registered account. Use a password of at least twelve characters.
+3. On the target, start an inspection. Run automatic checks. Browse every category; expand rows to see status, measured values, evidence, criteria and timestamps. Metadata is shown but not scored.
+4. Run guided checks using the indicated action. Cover all touch cells; test gestures; inspect display patterns; capture on each accessible camera; listen to tones; speak for the microphone; move/cover sensors; plug/unplug a charger; use GPS outdoors; authenticate biometrics. Missing hardware is recorded as unsupported. Deny a permission to demonstrate inaccessible results, then retry after granting it.
+5. Turn off networking, run a few more tests, close/reopen the app and open the saved inspection from History. Results remain in Room. Restore networking and Sync. Rejected evidence remains visible rather than disappearing.
+6. Select Pair scanner on the target. On the second phone, open Scanner and photograph/scan the target QR, then Join inspection. The code expires in five minutes and works once. Capture all twelve views with framing and adequate light.
+7. Sync captures and load review. QC rejects invalid/blurred/exposed/duplicate captures; recapture them. Open each accepted photo, draw a rectangle for any defect, select defect/severity and add it. Remove accidental annotations from the review list. Leave/reopen Scanner to check that the draft restores. Refresh images after recapture; stale annotations are discarded. Mark every view reviewed, confirm framing/angles and save the review. With no trained model, AI is honestly unavailable.
+8. Optionally OCR or enter IMEI and explicitly confirm any PTA evidence. The backend checks the IMEI checksum and stores only a suffix and keyed hash.
+9. Return to the target. Sync, then Finalize. Missing required diagnostics, critical inconclusive/skipped results, missing cosmetic review or exhausted entitlement return explicit errors. The first configured trial report consumes a server-side allowance.
+10. Open Reports, load the report, download/share its PDF and scan its verification QR on the other phone/browser. The public page shows every check, coverage, statuses, masked identity and signature state. The admin can revoke a report; the same QR then displays REVOKED.
+
+All physical failures must come from an actual observed defect. Backend test fixtures are labeled as synthetic and must never be shown as a real inspected phone. The local test PDF is only a layout/cryptography fixture.

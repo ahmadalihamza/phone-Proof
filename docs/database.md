@@ -1,0 +1,19 @@
+# Database and migrations
+
+From backend: `python -m alembic upgrade head`; schema drift check: `python -m alembic check`. Production URL uses `postgresql+psycopg://`. The API deliberately does not call create_all on startup.
+
+Identity tables: users (Argon2 hash, server role, encrypted TOTP seed and anti-replay counter, email verification timestamp and session version), refresh_tokens (hashed secrets, family, rotation/revocation and MFA state), account_actions (hashed single-use expiring reset/verification codes), mail_outbox (encrypted message payloads, bounded retries and delivery lease). Completed, cancelled, expired and permanently failed messages have their payload cleared. Reset advances the session version and revokes refresh tokens in the same transaction as the password update.
+
+Inspection tables: inspections (owner, immutable capability/definition snapshots after binding, state, pairing hash/expiry, scanner binding, masked IMEI suffix and keyed hash), diagnostic_results (append-only attempt UUID/content hash/received time), inspection_images (view, private object key, canonical image hash, QC measurements), cosmetic_reviews (image-set snapshot and human findings), ml_jobs (queue state and versioned results).
+
+The 18 October 2026 scoring migration adds `inspections.score_rule_version`. Existing rows receive version 1, preserving their original calculations; API-created rows explicitly receive the current version 2. New signed v2 payloads contain a full policy snapshot. Capability retries do not replace an already bound definition snapshot. The Android Room 1→2 migration adds the corresponding local version with a legacy default, without deleting drafts or attempts.
+
+Report tables: reports (canonical JSON, SHA-256, Ed25519 signature, public token and key version), report_revocations (append-only reason/time), audit_events (append-only actor/event/time/data).
+
+Commercial tables: plans (Numeric money and quota), subscriptions (period/limit snapshot/cancellation), transactions (authoritative price and state), report_usage (unique inspection consumption), refunds, promo_codes, promo_redemptions. Existing reports are independent of subscription expiry. Single account row locking serializes quota decisions. PostgreSQL row locks and unique constraints prevent duplicate consumption; local SQLite mutating requests begin IMMEDIATE.
+
+The 18 October payment migration adds immutable `transactions.plan_snapshot`, fulfillment status, exact subscription-to-purchase linkage and refund settlement identifiers/timestamps. `payment_attempts` stores verification state without raw gateway payloads/secrets; `payment_events` and `payment_receipts` are append-only with ORM/database guards. Transaction financial fields and deletion are guarded while settlement/refund state can advance. Historical snapshots/linkages remain null instead of being reconstructed from mutable plans. SQLite adds the nullable subscription reference in place, preserving existing report_usage foreign keys. Populated upgrade tests check legacy usage and raw financial/receipt/event mutation rejection.
+
+Run migrations as a privileged deployment identity. Restrict the runtime DB account from DDL or disabling triggers. Immutable tables have ORM guards and database UPDATE/DELETE triggers. Backups include signed reports and audit events; do not truncate these tables to reset a user's quota. Production concurrency, restoration and migration rehearsal on managed PostgreSQL are still required.
+
+The 10 October 2026 account migration adds the outbox/actions and initializes existing accounts with session version zero and an unverified email. The preceding MFA migration supplies defaults for existing user/refresh rows. Upgrade tests exercise both a fresh database and a database with accounts created before MFA/recovery.

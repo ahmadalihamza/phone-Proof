@@ -1,0 +1,11 @@
+.git
+.venv
+.tools
+android
+**/__pycache__
+**/runtime
+**/.env
+output
+tmp
+**/*.pem
+**/*.db

@@ -1,0 +1,3 @@
+-keepattributes Signature,InnerClasses,EnclosingMethod
+-keep class pk.phoneproof.diagnostics.**$$serializer { *; }
+-keep class pk.phoneproof.app.data.**_Impl { *; }

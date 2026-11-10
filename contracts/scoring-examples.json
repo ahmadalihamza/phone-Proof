@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Category shares withstand unequal check counts and check weights",
+    "definitions": [{"id":"display.red","category":"display","weight":1},{"id":"touch.single","category":"touch","weight":9},{"id":"storage.checksum","category":"storage","weight":100}],
+    "results": [{"check_id":"display.red","status":"PASS"},{"check_id":"touch.single","status":"PASS"},{"check_id":"storage.checksum","status":"FAIL"}],
+    "expected": {"score":71.43,"coverage":100,"grade":"C","critical_failures":[]}
+  },
+  {
+    "name": "Unavailable category reduces coverage without fabricating a failure",
+    "definitions": [{"id":"display.red","category":"display","weight":1},{"id":"audio.speaker.mid","category":"audio","weight":1},{"id":"storage.checksum","category":"storage","weight":1}],
+    "results": [{"check_id":"display.red","status":"PASS"},{"check_id":"audio.speaker.mid","status":"NOT_ACCESSIBLE"},{"check_id":"storage.checksum","status":"FAIL"}],
+    "expected": {"score":71.43,"coverage":77.78,"grade":"C","critical_failures":[]}
+  },
+  {
+    "name": "Unsupported category is excluded from coverage and score",
+    "definitions": [{"id":"display.red","category":"display","weight":1},{"id":"sensor.barometer.response","category":"sensors","weight":1}],
+    "results": [{"check_id":"display.red","status":"PASS"},{"check_id":"sensor.barometer.response","status":"NOT_SUPPORTED"}],
+    "expected": {"score":100,"coverage":100,"grade":"A","critical_failures":[]}
+  },
+  {
+    "name": "Partial category coverage uses within-category weight",
+    "definitions": [{"id":"display.red","category":"display","weight":1},{"id":"touch.grid","category":"touch","weight":3},{"id":"storage.checksum","category":"storage","weight":1}],
+    "results": [{"check_id":"display.red","status":"PASS"},{"check_id":"touch.grid","status":"INCONCLUSIVE"},{"check_id":"storage.checksum","status":"PASS"}],
+    "expected": {"score":100,"coverage":46.43,"grade":"A","critical_failures":[]}
+  },
+  {
+    "name": "Charging failure caps a high raw score at grade D",
+    "definitions": [{"id":"display.red","category":"display","weight":1},{"id":"charging.connect","category":"charging","weight":1},{"id":"charging.disconnect","category":"charging","weight":99}],
+    "results": [{"check_id":"display.red","status":"PASS"},{"check_id":"charging.connect","status":"FAIL"},{"check_id":"charging.disconnect","status":"PASS"}],
+    "expected": {"score":69,"coverage":100,"grade":"D","critical_failures":["charging.connect"]}
+  },
+  {
+    "name": "Per-lens capture failure caps grade C",
+    "definitions": [{"id":"camera.0.capture","category":"camera","weight":1},{"id":"camera.0.preview","category":"camera","weight":99}],
+    "results": [{"check_id":"camera.0.capture","status":"FAIL"},{"check_id":"camera.0.preview","status":"PASS"}],
+    "expected": {"score":79,"coverage":100,"grade":"C","critical_failures":["camera.0.capture"]}
+  },
+  {
+    "name": "Critical failure cap remains available for future checks",
+    "definitions": [{"id":"future.critical","category":"touch","weight":1,"critical":true},{"id":"touch.single","category":"touch","weight":99}],
+    "results": [{"check_id":"future.critical","status":"FAIL"},{"check_id":"touch.single","status":"PASS"}],
+    "expected": {"score":79,"coverage":100,"grade":"C","critical_failures":["future.critical"]}
+  },
+  {
+    "name": "Metadata cannot create a functional score",
+    "definitions": [{"id":"system.model","category":"system","weight":0},{"id":"touch.grid","category":"touch","weight":1}],
+    "results": [{"check_id":"system.model","status":"PASS"},{"check_id":"touch.grid","status":"SKIPPED_BY_USER"}],
+    "expected": {"score":null,"coverage":0,"grade":null,"critical_failures":[]}
+  },
+  {
+    "name": "Actual instants select retries across time zones",
+    "definitions": [{"id":"touch.single","category":"touch","weight":1}],
+    "results": [{"check_id":"touch.single","status":"PASS","completed_at":"2026-10-18T01:01:00Z"},{"check_id":"touch.single","status":"FAIL","completed_at":"2026-10-18T13:00:00+12:00"}],
+    "expected": {"score":100,"coverage":100,"grade":"A","critical_failures":[]}
+  }
+]

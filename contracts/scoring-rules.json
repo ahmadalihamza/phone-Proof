@@ -1,0 +1,42 @@
+{
+  "current_version": 2,
+  "rules": [
+    {
+      "version": 1,
+      "algorithm": "check_weighted",
+      "categories": [],
+      "default_critical_cap": 79,
+      "failure_caps": [],
+      "grade_bands": [{"minimum": 90, "grade": "A"}, {"minimum": 80, "grade": "B"}, {"minimum": 70, "grade": "C"}, {"minimum": 55, "grade": "D"}, {"minimum": 0, "grade": "E"}],
+      "cosmetic_deductions": {"minor": 5, "moderate": 15, "severe": 35},
+      "severe_crack_cap": 69,
+      "overall_method": "unavailable"
+    },
+    {
+      "version": 2,
+      "algorithm": "category_weighted",
+      "categories": [
+        {"id": "display_touch", "title": "Display and touch", "weight": 25, "members": ["display", "touch"]},
+        {"id": "cameras", "title": "Cameras", "weight": 15, "members": ["camera"]},
+        {"id": "battery_charging", "title": "Battery and charging", "weight": 15, "members": ["battery", "charging"]},
+        {"id": "audio", "title": "Audio", "weight": 10, "members": ["audio"]},
+        {"id": "sensors", "title": "Sensors", "weight": 10, "members": ["sensors"]},
+        {"id": "connectivity", "title": "Connectivity", "weight": 10, "members": ["connectivity"]},
+        {"id": "storage_system", "title": "Storage and system", "weight": 10, "members": ["storage", "system", "security", "biometrics", "performance"]},
+        {"id": "buttons_haptics", "title": "Buttons and haptics", "weight": 5, "members": ["buttons"]}
+      ],
+      "default_critical_cap": 79,
+      "failure_caps": [
+        {"prefix": "touch.grid", "suffix": "", "maximum": 79, "reason": "Touch coverage failure"},
+        {"prefix": "display.lines", "suffix": "", "maximum": 79, "reason": "Display line artifacts"},
+        {"prefix": "charging.connect", "suffix": "", "maximum": 69, "reason": "Charging connection failure"},
+        {"prefix": "audio.mic.capture", "suffix": "", "maximum": 79, "reason": "Microphone capture failure"},
+        {"prefix": "camera.", "suffix": ".capture", "maximum": 79, "reason": "Camera capture failure"}
+      ],
+      "grade_bands": [{"minimum": 90, "grade": "A"}, {"minimum": 80, "grade": "B"}, {"minimum": 70, "grade": "C"}, {"minimum": 55, "grade": "D"}, {"minimum": 0, "grade": "E"}],
+      "cosmetic_deductions": {"minor": 5, "moderate": 15, "severe": 35},
+      "severe_crack_cap": 69,
+      "overall_method": "minimum"
+    }
+  ]
+}
