@@ -123,7 +123,7 @@ def test_scoring_is_order_independent_and_caps_critical_failure():
     assert score(d,[{'check_id':'a','status':'NOT_SUPPORTED'},{'check_id':'b','status':'PASS'}])['functional_score']==100
     assert score(d,[{'check_id':'a','status':'INCONCLUSIVE'}])['functional_score'] is None
 
-def test_complete_server_journey_pdf_signature_immutability_and_revocation(client,user,tmp_path):
+def test_complete_server_journey_pdf_signature_immutability_and_revocation(client,user,tmp_path,monkeypatch):
     id,p=create(client,user)
     assert client.post(f'{API}/inspections/{id}/finalize',headers=user).status_code==409
     batch(client,user,id,results_for(client,user,id,p))
@@ -134,9 +134,16 @@ def test_complete_server_journey_pdf_signature_immutability_and_revocation(clien
     r=client.post(f'{API}/inspections/{id}/finalize',headers=user)
     assert r.status_code==200,r.text
     report=r.json();report_id=report['id'];token=report['public_token']
+    assert report['payload']['analysis']['policy_version'] == 1
+    original_hash = report['hash']
+    monkeypatch.setattr('app.reports.analyze', lambda _: {'policy_version': 999, 'findings': []})
     assert client.post(f'{API}/inspections/{id}/finalize',headers=user).json()['id']==report_id
+    repeated = client.post(f'{API}/inspections/{id}/finalize',headers=user).json()
+    assert repeated['hash'] == original_hash
+    assert repeated['payload']['analysis']['policy_version'] == 1
     assert client.post(f'{API}/inspections/{id}/results/batch',headers=user,json={'results':results_for(client,user,id,p)[:1]}).status_code==409
     verified=client.get(API+'/verify/'+token).json()
+    assert 'analysis' not in verified['payload']
     assert verified['status']=='VALID'
     assert 'password' not in json.dumps(verified) and 'latitude' not in json.dumps(verified)
     assert client.get('/r/'+token).status_code==200

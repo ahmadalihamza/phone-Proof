@@ -210,6 +210,12 @@ def calculate(inspection_id:UUID,user=Depends(current_user),db=Depends(get_db, s
     return score(i.definitions,latest(db,i),i.score_rule_version)
 
 
+@router.get('/inspections/{inspection_id}/analysis')
+def analysis(inspection_id:UUID,user=Depends(current_user),db=Depends(get_db, scope='function')):
+    from .expert_analysis import analyze
+    return analyze(latest(db,owned(db,user,inspection_id)))
+
+
 @router.post('/inspections/{inspection_id}/pause')
 def pause(inspection_id:UUID,user=Depends(current_user),db=Depends(get_db, scope='function')):
     i=owned(db,user,inspection_id,True); i.status='PAUSED'

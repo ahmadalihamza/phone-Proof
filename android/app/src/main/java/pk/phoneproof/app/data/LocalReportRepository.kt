@@ -50,6 +50,8 @@ class LocalReportRepository(private val context:Context,private val db:PhoneProo
                 .put("unavailable",count(DiagnosticStatus.NOT_SUPPORTED)+count(DiagnosticStatus.NOT_ACCESSIBLE))
                 .put("unverified",weighted.count { latest[it.id]?.status !in setOf(DiagnosticStatus.PASS,DiagnosticStatus.FAIL,DiagnosticStatus.NOT_SUPPORTED,DiagnosticStatus.NOT_ACCESSIBLE) })
                 .put("checks",checks).put("notice","Local observations and human assessments. Not a server-signed or laboratory certificate. Untested and unavailable checks remain explicit.")
+            val assessment = ExpertAnalysis.analyze(attempts, AnalysisPolicy.load(context))
+            payload.put("analysis", JSONObject(DiagnosticRegistry.json.encodeToString(ExpertAssessment.serializer(), assessment)))
             val serialized=payload.toString()
             val hash=MessageDigest.getInstance("SHA-256").digest(serialized.toByteArray(Charsets.UTF_8)).joinToString("") { "%02x".format(it) }
             LocalReport(inspectionId,previous?.createdAt?:now,now,serialized,hash,previous?.cloudReportJson).also { dao.putReport(it) }

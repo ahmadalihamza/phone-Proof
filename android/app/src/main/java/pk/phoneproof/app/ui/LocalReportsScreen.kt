@@ -19,6 +19,8 @@ import pk.phoneproof.app.data.LocalInspection
 import pk.phoneproof.app.data.LocalReport
 import pk.phoneproof.app.data.LocalReportPdf
 import java.io.File
+import pk.phoneproof.diagnostics.DiagnosticRegistry
+import pk.phoneproof.diagnostics.ExpertAssessment
 
 /** Local inspections remain available without a server or sign-in. Cloud reports retain their own flow. */
 @Composable
@@ -113,6 +115,9 @@ private fun LocalReportsContent(vm:InspectionViewModel,activity:Activity,onResum
                     }
                 }
                 Button(onClick={export(report)},enabled=busy==null,modifier=Modifier.fillMaxWidth()) { Text("Share local PDF") }
+                if(payload.has("analysis")) {
+                    ExpertAnalysisPanel(remember(report) { DiagnosticRegistry.json.decodeFromString<ExpertAssessment>(payload.getJSONObject("analysis").toString()) })
+                }
                 if(!inspection.serverFinalized)OutlinedButton(onClick={opened=null;onResume(inspection)},enabled=busy==null,modifier=Modifier.fillMaxWidth()) { Text("Continue inspection") }
                 TextButton(onClick={showChecks=!showChecks},modifier=Modifier.fillMaxWidth()) { Text(if(showChecks)"Hide check details" else "Show check details") }
                 if(showChecks) {

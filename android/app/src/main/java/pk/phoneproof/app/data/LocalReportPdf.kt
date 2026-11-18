@@ -79,6 +79,18 @@ object LocalReportPdf {
             if(!payload.isNull("tested_coverage_percent"))line("Conclusive coverage: ${"%.1f".format(java.util.Locale.ROOT,payload.optDouble("tested_coverage_percent"))}%")
             if(!payload.isNull("functional_score_preview"))line("Local score preview: ${"%.1f".format(java.util.Locale.ROOT,payload.optDouble("functional_score_preview"))}/100 · Rule ${payload.optInt("score_rule_version")}")
             line("A partial inspection can leave defects unobserved. This summary is not a laboratory certificate.",10f)
+            payload.optJSONObject("analysis")?.let { analysis ->
+                line("Diagnostic interpretation · Policy ${analysis.optInt("policy_version")}",14f,true)
+                val findings = analysis.getJSONArray("findings")
+                for(index in 0 until findings.length()) {
+                    val finding = findings.getJSONObject(index)
+                    if(finding.optString("severity") == "INFO") continue
+                    line(finding.getString("title"),11f,true)
+                    line(finding.getString("interpretation"),10f)
+                    line(finding.getString("further_inspection"),10f)
+                    line(finding.getString("limitations"),9f)
+                }
+            }
             line("")
             val checks=payload.getJSONArray("checks")
             for(index in 0 until checks.length()) {

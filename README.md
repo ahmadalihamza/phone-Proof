@@ -93,4 +93,6 @@ Remaining external inputs are listed in [external services](docs/external-servic
 
 [Payment readiness](docs/payment-readiness.md) details the implemented billing flows and the merchant activation work. Easypaisa, JazzCash and card collection are not active; local development simulations move no money.
 
+The [advanced diagnostics increment](docs/advanced-diagnostics-mvp.md) adds bounded telemetry and a shared deterministic interpretation policy. It includes the preserved-coverage baseline, current evidence limits, and a persistent USB demo-backend guide.
+
 Architecture, API, database and requirement mapping are in [docs](docs/architecture.md). The original request and blueprint are preserved in `docs/source-requirements.md` and `docs/source-blueprint.md`.

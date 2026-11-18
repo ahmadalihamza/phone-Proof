@@ -377,6 +377,7 @@ private fun InspectionResults(vm: InspectionViewModel, inspection: LocalInspecti
                 }
             } }
             item {
+                ExpertAnalysisPanel(attempts)
                 SecondaryTabRow(selectedTabIndex = if(deviceInfo) 1 else 0, containerColor = MaterialTheme.colorScheme.background) {
                     Tab(!deviceInfo, { deviceInfo = false; category = "All"; filter = "All" }, text = { Text("Checks") })
                     Tab(deviceInfo, { deviceInfo = true; category = "All"; filter = "All" }, text = { Text("Device info") })
