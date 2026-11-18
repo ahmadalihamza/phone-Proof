@@ -1,0 +1,335 @@
+[
+  {
+    "name": "unknown is not healthy",
+    "results": [
+      {
+        "check_id": "battery.health",
+        "status": "NOT_ACCESSIBLE",
+        "measured_value": {},
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": []
+  },
+  {
+    "name": "oem health advisory",
+    "results": [
+      {
+        "check_id": "battery.health",
+        "status": "PASS",
+        "measured_value": {
+          "health_code": "4"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "battery.reported_health"
+    ]
+  },
+  {
+    "name": "good oem status never estimates capacity",
+    "results": [
+      {
+        "check_id": "battery.health",
+        "status": "PASS",
+        "measured_value": {
+          "health_code": "2"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": []
+  },
+  {
+    "name": "temperature threshold",
+    "results": [
+      {
+        "check_id": "battery.health",
+        "status": "PASS",
+        "measured_value": {
+          "temperature_c": "45"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "battery.hot"
+    ]
+  },
+  {
+    "name": "nonfinite ignored",
+    "results": [
+      {
+        "check_id": "battery.health",
+        "status": "PASS",
+        "measured_value": {
+          "temperature_c": "NaN"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": []
+  },
+  {
+    "name": "infinite ignored",
+    "results": [
+      {
+        "check_id": "battery.health",
+        "status": "PASS",
+        "measured_value": {
+          "temperature_c": "Infinity"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": []
+  },
+  {
+    "name": "charging contradiction",
+    "results": [
+      {
+        "check_id": "battery.health",
+        "status": "PASS",
+        "measured_value": {
+          "charging_without_source": "true"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "battery.contradiction"
+    ]
+  },
+  {
+    "name": "counter inconsistency",
+    "results": [
+      {
+        "check_id": "battery.health",
+        "status": "PASS",
+        "measured_value": {
+          "level_percent": "40",
+          "charge_mah": "0.0"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "battery.empty_counter"
+    ]
+  },
+  {
+    "name": "unknown counter no inference",
+    "results": [
+      {
+        "check_id": "battery.health",
+        "status": "PASS",
+        "measured_value": {
+          "level_percent": "40"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": []
+  },
+  {
+    "name": "thermal severe",
+    "results": [
+      {
+        "check_id": "thermal.status",
+        "status": "PASS",
+        "measured_value": {
+          "thermal_status": "3"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "thermal.severe"
+    ]
+  },
+  {
+    "name": "patch future",
+    "results": [
+      {
+        "check_id": "system.model",
+        "status": "PASS",
+        "measured_value": {
+          "patch_age_days": "-1"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "software.patch_future"
+    ]
+  },
+  {
+    "name": "patch old",
+    "results": [
+      {
+        "check_id": "system.model",
+        "status": "PASS",
+        "measured_value": {
+          "patch_age_days": "365"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "software.patch_old"
+    ]
+  },
+  {
+    "name": "developer options neutral",
+    "results": [
+      {
+        "check_id": "system.model",
+        "status": "PASS",
+        "measured_value": {
+          "developer_options": "true"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "software.developer"
+    ]
+  },
+  {
+    "name": "no play service",
+    "results": [
+      {
+        "check_id": "system.model",
+        "status": "PASS",
+        "measured_value": {
+          "play_integrity": "UNAVAILABLE"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "software.attestation"
+    ]
+  },
+  {
+    "name": "cpu variability",
+    "results": [
+      {
+        "check_id": "performance.cpu",
+        "status": "PASS",
+        "measured_value": {
+          "timing_ratio": "2",
+          "windows_completed": "3"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "performance.variation",
+      "performance.observed"
+    ]
+  },
+  {
+    "name": "low memory",
+    "results": [
+      {
+        "check_id": "performance.memory",
+        "status": "PASS",
+        "measured_value": {
+          "low_memory": "true"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "memory.pressure"
+    ]
+  },
+  {
+    "name": "storage pressure",
+    "results": [
+      {
+        "check_id": "storage.checksum",
+        "status": "PASS",
+        "measured_value": {
+          "available_bytes": "100"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "storage.pressure"
+    ]
+  },
+  {
+    "name": "network absence not hardware failure",
+    "results": [
+      {
+        "check_id": "network.validated",
+        "status": "PASS",
+        "measured_value": {
+          "validated": "false"
+        },
+        "evidence": {},
+        "message": "Synthetic regression evidence",
+        "method": "fixture",
+        "completed_at": "2026-11-18T01:00:00Z"
+      }
+    ],
+    "expected_rule_ids": [
+      "network.unvalidated"
+    ]
+  }
+]

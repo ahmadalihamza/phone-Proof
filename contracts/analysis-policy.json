@@ -1,0 +1,384 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "battery.reported_health",
+      "category": "battery",
+      "title": "Android reports a battery health problem",
+      "severity": "WARNING",
+      "kind": "RISK",
+      "source": "battery.health",
+      "conditions": [
+        {
+          "key": "health_code",
+          "op": "in",
+          "value": "3,4,5,6,7"
+        }
+      ],
+      "interpretation": "The OEM battery service reported a non-good health state.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Review battery service evidence and inspect the battery safely.",
+      "limitations": "OEM-reported status does not measure remaining capacity."
+    },
+    {
+      "id": "battery.hot",
+      "category": "battery",
+      "title": "Battery temperature needs attention",
+      "severity": "WARNING",
+      "kind": "RISK",
+      "source": "battery.health",
+      "conditions": [
+        {
+          "key": "temperature_c",
+          "op": "gte",
+          "value": "45"
+        }
+      ],
+      "interpretation": "Battery temperature reached the advisory 45 C threshold during ordinary operation.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Pause inspection, allow cooling and repeat under normal conditions.",
+      "limitations": "A single reading cannot identify a battery defect."
+    },
+    {
+      "id": "battery.contradiction",
+      "category": "battery",
+      "title": "Charging observations disagree",
+      "severity": "REVIEW",
+      "kind": "RISK",
+      "source": "battery.health",
+      "conditions": [
+        {
+          "key": "charging_without_source",
+          "op": "eq",
+          "value": "true"
+        }
+      ],
+      "interpretation": "Android reported charging while no power source was reported.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Repeat after checking cable and charger.",
+      "limitations": "Broadcast and fuel-gauge updates may arrive at different times."
+    },
+    {
+      "id": "battery.empty_counter",
+      "category": "battery",
+      "title": "Battery counters need review",
+      "severity": "REVIEW",
+      "kind": "RISK",
+      "source": "battery.health",
+      "conditions": [
+        {
+          "key": "level_percent",
+          "op": "gte",
+          "value": "10"
+        },
+        {
+          "key": "charge_mah",
+          "op": "eq",
+          "value": "0.0"
+        }
+      ],
+      "interpretation": "Remaining charge was reported as zero while battery level was nonzero.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Review repeated OEM telemetry.",
+      "limitations": "Unsupported or faulty fuel-gauge reporting can explain this observation."
+    },
+    {
+      "id": "thermal.severe",
+      "category": "thermal",
+      "title": "Android reports thermal throttling",
+      "severity": "WARNING",
+      "kind": "RISK",
+      "source": "thermal.status",
+      "conditions": [
+        {
+          "key": "thermal_status",
+          "op": "gte",
+          "value": "3"
+        }
+      ],
+      "interpretation": "Android reports severe or greater thermal pressure.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Pause workloads and repeat after cooling.",
+      "limitations": "This reports system thermal policy, not CPU temperature."
+    },
+    {
+      "id": "software.patch_old",
+      "category": "system",
+      "title": "Security patch is over one year old",
+      "severity": "REVIEW",
+      "kind": "RISK",
+      "source": "system.model",
+      "conditions": [
+        {
+          "key": "patch_age_days",
+          "op": "gte",
+          "value": "365"
+        }
+      ],
+      "interpretation": "The reported patch date is at least 365 days before the observation date.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Check vendor updates before use with sensitive accounts.",
+      "limitations": "Advisory maintenance threshold. Patch metadata does not prove firmware authenticity."
+    },
+    {
+      "id": "software.patch_future",
+      "category": "system",
+      "title": "Security patch date is in the future",
+      "severity": "REVIEW",
+      "kind": "RISK",
+      "source": "system.model",
+      "conditions": [
+        {
+          "key": "patch_age_days",
+          "op": "lt",
+          "value": "0"
+        }
+      ],
+      "interpretation": "The device clock and security patch date disagree.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Check device date and vendor build information.",
+      "limitations": "Clock or vendor metadata can explain the discrepancy."
+    },
+    {
+      "id": "software.root_indicator",
+      "category": "system",
+      "title": "Visible root-risk indicator",
+      "severity": "REVIEW",
+      "kind": "RISK",
+      "source": "system.model",
+      "conditions": [
+        {
+          "key": "visible_su",
+          "op": "eq",
+          "value": "true"
+        }
+      ],
+      "interpretation": "A conventional su path was visible.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Review device history and authorized vendor software.",
+      "limitations": "Heuristic indicator. Does not prove root, malware, or bootloader state."
+    },
+    {
+      "id": "software.test_keys",
+      "category": "system",
+      "title": "Firmware uses test-key build tags",
+      "severity": "REVIEW",
+      "kind": "RISK",
+      "source": "system.model",
+      "conditions": [
+        {
+          "key": "test_keys",
+          "op": "eq",
+          "value": "true"
+        }
+      ],
+      "interpretation": "Build tags include test-keys.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Review vendor firmware and device history.",
+      "limitations": "Build tags alone cannot establish authenticity or malicious modification."
+    },
+    {
+      "id": "software.lock",
+      "category": "system",
+      "title": "Secure screen lock is unavailable",
+      "severity": "REVIEW",
+      "kind": "RISK",
+      "source": "system.model",
+      "conditions": [
+        {
+          "key": "secure_lock",
+          "op": "eq",
+          "value": "false"
+        }
+      ],
+      "interpretation": "Android reports no secure device screen lock.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Configure a secure screen lock if this phone will hold private data.",
+      "limitations": "Setting observation, not a hardware failure."
+    },
+    {
+      "id": "software.developer",
+      "category": "system",
+      "title": "Developer options are enabled",
+      "severity": "INFO",
+      "kind": "OBSERVATION",
+      "source": "system.model",
+      "conditions": [
+        {
+          "key": "developer_options",
+          "op": "eq",
+          "value": "true"
+        }
+      ],
+      "interpretation": "Developer options are enabled.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Review debugging settings before handing over the phone.",
+      "limitations": "Legitimate developer settings are not evidence of malicious activity."
+    },
+    {
+      "id": "software.attestation",
+      "category": "system",
+      "title": "Device attestation is unavailable",
+      "severity": "INFO",
+      "kind": "UNAVAILABLE",
+      "source": "system.model",
+      "conditions": [
+        {
+          "key": "play_integrity",
+          "op": "eq",
+          "value": "UNAVAILABLE"
+        }
+      ],
+      "interpretation": "No configured Play Integrity service was available.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Use a legitimately configured integrity service if attestation is required.",
+      "limitations": "Verified Boot feature presence alone is not boot-chain verification."
+    },
+    {
+      "id": "memory.pressure",
+      "category": "performance",
+      "title": "Android reports low memory",
+      "severity": "REVIEW",
+      "kind": "RISK",
+      "source": "performance.memory",
+      "conditions": [
+        {
+          "key": "low_memory",
+          "op": "eq",
+          "value": "true"
+        }
+      ],
+      "interpretation": "Android reports current memory pressure.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Close unnecessary workloads and repeat.",
+      "limitations": "Memory pressure does not establish RAM-chip damage."
+    },
+    {
+      "id": "storage.pressure",
+      "category": "storage",
+      "title": "App-private storage is nearly full",
+      "severity": "REVIEW",
+      "kind": "RISK",
+      "source": "storage.checksum",
+      "conditions": [
+        {
+          "key": "available_bytes",
+          "op": "lt",
+          "value": "67108864"
+        }
+      ],
+      "interpretation": "Less than 64 MiB is available to the application.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Free storage and repeat I/O checks.",
+      "limitations": "Advisory free-space threshold, not a NAND wear estimate."
+    },
+    {
+      "id": "performance.variation",
+      "category": "performance",
+      "title": "Computation timing varies",
+      "severity": "REVIEW",
+      "kind": "RISK",
+      "source": "performance.cpu",
+      "conditions": [
+        {
+          "key": "timing_ratio",
+          "op": "gte",
+          "value": "2"
+        }
+      ],
+      "interpretation": "The slowest bounded computation window took at least twice the fastest.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Repeat after background activity settles.",
+      "limitations": "Scheduling, thermal policy and background work affect timing. No processor degradation claim."
+    },
+    {
+      "id": "performance.observed",
+      "category": "performance",
+      "title": "Repeated computation completed",
+      "severity": "INFO",
+      "kind": "NORMAL_OBSERVED",
+      "source": "performance.cpu",
+      "conditions": [
+        {
+          "key": "windows_completed",
+          "op": "eq",
+          "value": "3"
+        }
+      ],
+      "interpretation": "Three bounded computation windows completed and their output agreed.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Compare only repeated observations under similar conditions.",
+      "limitations": "Application-level performance snapshot."
+    },
+    {
+      "id": "network.unvalidated",
+      "category": "connectivity",
+      "title": "Network has no validated internet",
+      "severity": "REVIEW",
+      "kind": "RISK",
+      "source": "network.validated",
+      "conditions": [
+        {
+          "key": "validated",
+          "op": "eq",
+          "value": "false"
+        }
+      ],
+      "interpretation": "Android has not validated the current network.",
+      "confidence_basis": "Public Android API observation evaluated by policy v1",
+      "possible_explanations": [
+        "Operating conditions, platform reporting, or a condition needing inspection"
+      ],
+      "further_inspection": "Check router, captive portal and coverage.",
+      "limitations": "External service availability does not establish radio hardware failure."
+    }
+  ]
+}

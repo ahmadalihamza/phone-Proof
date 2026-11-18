@@ -22,6 +22,7 @@ from .scoring import incomplete_for_report, overall_score
 from .media import evidence_summary
 from .billing import consume_report_entitlement, lock_account
 from .audit import audit
+from .expert_analysis import analyze
 from .config import settings
 from pydantic import Field
 
@@ -99,6 +100,7 @@ def finalize(inspection_id:UUID,user=Depends(current_user),db=Depends(get_db, sc
              'disclaimer':'Observed condition at inspection time only. Platform metadata is not tested functionality. Human confirmations are not laboratory certification. No OEM authenticity, battery lifespan, hidden liquid damage, future reliability or official PTA lookup is claimed.'}
     if i.score_rule_version>=2:
         payload['overall']=overall_score(scoring['functional_score'],cosmetics['cosmetic_score'],i.score_rule_version)
+    payload['analysis'] = analyze(results)
     body=canonical(payload); digest=hashlib.sha256(body.encode()).hexdigest(); key=signing_key()
     report=Report(id=report_id,inspection_id=i.id,public_token=secrets.token_urlsafe(24),payload=payload,canonical_json=body,hash=digest,
                   signature=base64.b64encode(key.sign(bytes.fromhex(digest))).decode(),key_version=settings.signing_key_version,
@@ -164,6 +166,13 @@ def generate_pdf(report,revoked=False):
         for cap in p['score']['caps']:
             flow.append(para(f"{cap['reason']}: maximum functional score {cap['maximum_score']} ({titles.get(cap['check_id'],cap['check_id'])}).",'SmallText'))
     if p['score']['critical_failures']:flow += [para('Critical failures','Heading2'),para(', '.join(p['score']['critical_failures']))]
+    if p.get('analysis'):
+        flow += [para('Diagnostic interpretation','Heading2'), para('Advisory deterministic policy v' + str(p['analysis']['policy_version']), 'SmallText')]
+        for finding in p['analysis']['findings']:
+            if finding['severity'] == 'INFO':
+                continue
+            flow += [para(finding['title'], 'Heading3'), para(finding['interpretation']),
+                     para(finding['further_inspection'], 'SmallText'), para(finding['limitations'], 'SmallText')]
     for category in sorted({r['category'] for r in p['checks']}):
         heading=para(category.title(),'Heading2')
         rows=[[para('Individual check','SmallText'),para('Result','SmallText'),para('Method / definition','SmallText')]]
@@ -206,6 +215,8 @@ def public_verify(token:str,db=Depends(get_db, scope='function')):
     r=db.scalar(select(Report).where(Report.public_token==token))
     if not r:raise HTTPException(404,'Report not found')
     info=copy.deepcopy(report_info(r,bool(db.get(Revocation,r.id))))
+    # Owner analysis can contain client-supplied free text and telemetry.
+    info['payload'].pop('analysis', None)
     for check in info['payload']['checks']:
         for key in ('measured_value','evidence','message'):
             check.pop(key,None)

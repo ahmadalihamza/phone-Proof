@@ -4,7 +4,7 @@ permissions:
   contents: read
 jobs:
   backend:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -12,12 +12,13 @@ jobs:
       - run: pip install -c backend/requirements-tested.txt -r backend/requirements-dev.txt
       - run: pip-audit --strict
       - run: python tools/generate_registry.py && git diff --exit-code contracts docs/diagnostic-registry.md
+      - run: python tools/check_diagnostic_preservation.py && python tools/generate_workflow_inventory.py --check
       - working-directory: backend
         run: ruff check app tests && pytest -q && alembic upgrade head && alembic check
       - run: python tools/smoke_backend.py
       - run: docker build -f backend/Dockerfile .
   backend-postgresql:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     services:
       postgres:
         image: postgres:16
@@ -39,15 +40,20 @@ jobs:
       - working-directory: backend
         run: pytest -q tests/test_postgresql.py
   android:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with: {distribution: temurin, java-version: '17'}
-      - uses: android-actions/setup-android@v3
       - uses: gradle/actions/setup-gradle@v4
         with: {gradle-version: '8.11.1'}
-      - run: sdkmanager 'platforms;android-36' 'build-tools;35.0.0'
+      - name: Use runner Android SDK explicitly
+        shell: bash
+        run: |
+          SDK_MANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          test -x "$SDK_MANAGER"
+          "$SDK_MANAGER" --version
+          "$SDK_MANAGER" 'platforms;android-36' 'build-tools;35.0.0'
       - working-directory: android
         run: gradle :app:assembleDebug :app:testDebugUnitTest :diagnostics:testDebugUnitTest :app:lintDebug
       - run: python tools/verify_android_artifacts.py

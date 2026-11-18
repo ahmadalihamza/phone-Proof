@@ -43,14 +43,15 @@ fun HardwareInspection(workflow: InspectionWorkflow, latest: Map<String, Diagnos
                     LinearProgressIndicator(progress = { position.toFloat() / steps.size }, modifier = Modifier.fillMaxWidth())
                     Text(when(d.handler) {
                         "microphone" -> "Microphone"
-                        "sensor_sample" -> d.parameters["type"].orEmpty().replace('_', ' ').replaceFirstChar { it.uppercase() }
+                        "sensor_sample" -> (CapabilityScanner.sensorTypes.entries.firstOrNull { it.value.toString() == d.parameters["type"] }?.key
+                            ?: d.parameters["type"].orEmpty()).replace('_', ' ').replaceFirstChar { it.uppercase() }
                         else -> d.title
                     }, style = MaterialTheme.typography.titleLarge)
                     Text(when(d.handler) {
                         "microphone" -> "Speak normally near the phone for a few seconds."
                         "sensor_sample" -> when(d.parameters["type"]) {
-                            "light" -> "Cover and uncover the light sensor near the top of the phone."
-                            "proximity" -> "Move your hand close to the top of the screen, then away."
+                            "5", "light" -> "Cover and uncover the light sensor near the top of the phone."
+                            "8", "proximity" -> "Move your hand close to the top of the screen, then away."
                             else -> "Gently move and rotate the phone while it records."
                         }
                         "charging" -> if(d.parameters.values.any { it.contains("disconnect") }) {

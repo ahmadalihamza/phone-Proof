@@ -58,6 +58,7 @@ import kotlin.math.abs
 import kotlin.math.sqrt
 
 class DiagnosticsEngine(private val context: Context) {
+    private val advanced = AdvancedObservations(context)
     private val main = Handler(Looper.getMainLooper())
     private val handlers: Map<String,suspend (DiagnosticDefinition) -> Observation> = mapOf(
         "system" to { system(it) },"feature" to { feature(it) },"display" to { display(it) },
@@ -90,8 +91,10 @@ class DiagnosticsEngine(private val context: Context) {
         blocked(d,profile,started)?.let { return it }
         val handler=handlers[d.handler] ?: return result(d,DiagnosticStatus.INCONCLUSIVE,emptyMap(),"Start the guided test and record real evidence",started)
         return try {
-            val observation=withContext(Dispatchers.IO) { withTimeout(d.timeoutSeconds*1000L) { handler(d) } }
-            result(d,observation.status,observation.values,observation.message,started,observation.evidence)
+            withContext(Dispatchers.IO) { withTimeout(d.timeoutSeconds*1000L) {
+                val observation = handler(d)
+                advanced.enrich(d, result(d,observation.status,observation.values,observation.message,started,observation.evidence))
+            } }
         } catch(e:TimeoutCancellationException) {
             result(d,DiagnosticStatus.INCONCLUSIVE,emptyMap(),"Test timed out without a reliable conclusion",started)
         } catch(e:CancellationException) { throw e }
@@ -295,19 +298,28 @@ class DiagnosticsEngine(private val context: Context) {
             else -> unavailable("Network field unavailable")
         }
     }
-    private fun storage(d:DiagnosticDefinition):Observation {
+    private suspend fun storage(d:DiagnosticDefinition):Observation {
+        val free = StatFs(context.cacheDir.absolutePath).availableBytes
+        if(free < 8L * 1024 * 1024) return inconclusive("Insufficient free space for a safe private I/O probe", mapOf("available_bytes" to free.toString()))
         val file=File.createTempFile("phoneproof-",".bin",context.cacheDir)
         return try {
             val data=ByteArray(256*1024) { (it%251).toByte() }
             val start=SystemClock.elapsedRealtimeNanos()
+            currentCoroutineContext().ensureActive()
             FileOutputStream(file).use { it.write(data);it.fd.sync() }
+            val writtenAt = SystemClock.elapsedRealtimeNanos()
             val read=file.readBytes()
+            val readAt = SystemClock.elapsedRealtimeNanos()
             val digest=MessageDigest.getInstance("SHA-256")
             if(!digest.digest(data).contentEquals(digest.digest(read)))return Observation(DiagnosticStatus.FAIL,mapOf("bytes" to read.size.toString()),"Checksum mismatch")
             FileOutputStream(file).use { it.write(byteArrayOf(11,22,33));it.fd.sync() }
             if(!file.readBytes().contentEquals(byteArrayOf(11,22,33)))return Observation(DiagnosticStatus.FAIL,mapOf("overwrite_verified" to "false"),"Overwrite mismatch")
+            currentCoroutineContext().ensureActive()
+            val readAgain = file.readBytes()
+            if(!readAgain.contentEquals(byteArrayOf(11,22,33))) return Observation(DiagnosticStatus.FAIL,mapOf("repeat_read_verified" to "false"),"Repeated overwrite read mismatch")
             if(!file.delete())return Observation(DiagnosticStatus.FAIL,mapOf("deleted" to "false"),"Temporary file deletion failed")
             Observation(DiagnosticStatus.PASS,mapOf("bytes_verified" to data.size.toString(),"round_trip_ms" to ((SystemClock.elapsedRealtimeNanos()-start)/1e6).toString(),"operation" to d.parameters.getValue("field"),
+                "sequential_write_sync_ms" to ((writtenAt-start)/1e6).toString(), "sequential_read_ms" to ((readAt-writtenAt)/1e6).toString(), "repeat_read_verified" to "true",
                 "probe_kind" to "private_storage_round_trip","round_trip_complete" to "true","verified_operations" to "create,write,read,checksum,overwrite,delete"),"App-private I/O and checksum verified; performance snapshot, not NAND health")
         } catch(e:java.io.IOException) { Observation(DiagnosticStatus.FAIL,mapOf("error_type" to e.javaClass.simpleName),"Filesystem I/O failed") }
         finally { file.delete() }
@@ -322,8 +334,48 @@ class DiagnosticsEngine(private val context: Context) {
             Observation(if(value=="phoneproof")DiagnosticStatus.PASS else DiagnosticStatus.FAIL,mapOf("transaction_committed" to (value=="phoneproof").toString()),"SQLite write/read transaction verified")
         } finally { db.close();SQLiteDatabase.deleteDatabase(path) }
     }
-    private fun cpu():Observation { val md=MessageDigest.getInstance("SHA-256");val data=ByteArray(4096) { it.toByte() };val start=SystemClock.elapsedRealtimeNanos();repeat(1000) { md.digest(data) };return info((SystemClock.elapsedRealtimeNanos()-start)/1e6,"performance_snapshot_ms") }
-    private fun memory():Observation { val data=ByteArray(1024*1024) { (it%127).toByte() };val valid=data.indices.all { data[it]==(it%127).toByte() };return Observation(if(valid)DiagnosticStatus.PASS else DiagnosticStatus.FAIL,mapOf("bytes" to data.size.toString(),"verified" to valid.toString()),"Safe allocation round trip") }
+    private suspend fun cpu():Observation {
+        if(context.getSystemService(PowerManager::class.java).currentThermalStatus >= PowerManager.THERMAL_STATUS_SEVERE)
+            return inconclusive("Computation deferred while Android reports severe thermal pressure")
+        val digest = MessageDigest.getInstance("SHA-256")
+        val data = ByteArray(4096) { it.toByte() }
+        val expected = digest.digest(data)
+        val timings = mutableListOf<Double>()
+        val deadline = SystemClock.elapsedRealtime() + 1500
+        repeat(3) {
+            val start = SystemClock.elapsedRealtimeNanos()
+            repeat(1000) { iteration ->
+                if(iteration % 32 == 0) {
+                    currentCoroutineContext().ensureActive()
+                    if(SystemClock.elapsedRealtime() > deadline) return inconclusive("Bounded computation budget reached")
+                }
+                if(!digest.digest(data).contentEquals(expected)) return Observation(DiagnosticStatus.FAIL, mapOf("output_consistent" to "false"), "Repeated computation output disagreed")
+            }
+            timings += (SystemClock.elapsedRealtimeNanos() - start) / 1e6
+            delay(50)
+        }
+        return Observation(DiagnosticStatus.PASS, mapOf("performance_snapshot_ms" to timings.average().toString(),
+            "window_times_ms" to timings.joinToString(","), "windows_completed" to "3", "output_consistent" to "true",
+            "timing_ratio" to (timings.max() / timings.min().coerceAtLeast(0.001)).toString()),
+            "Three bounded computation windows completed. Timing reflects current operating conditions.")
+    }
+
+    private suspend fun memory():Observation {
+        return try {
+            val data = ByteArray(1024*1024)
+            repeat(2) { pass ->
+                for(index in data.indices) {
+                    if(index % 65536 == 0) currentCoroutineContext().ensureActive()
+                    data[index] = ((index + pass) % 127).toByte()
+                }
+                if(!data.indices.all { data[it] == ((it + pass) % 127).toByte() })
+                    return Observation(DiagnosticStatus.FAIL,mapOf("bytes" to data.size.toString(),"verified" to "false"),"Allocated memory verification disagreed")
+            }
+            Observation(DiagnosticStatus.PASS,mapOf("bytes" to data.size.toString(),"verified" to "true", "patterns_verified" to "2"),"Bounded 1 MiB allocation and two patterns verified")
+        } catch(error:OutOfMemoryError) {
+            inconclusive("The bounded allocation was rejected under current memory pressure",mapOf("allocation_failed" to "true", "requested_bytes" to "1048576"))
+        }
+    }
     private fun keystore():Observation {
         val alias="phoneproof-diagnostic-${UUID.randomUUID()}";val store=KeyStore.getInstance("AndroidKeyStore").also { it.load(null) }
         return try {

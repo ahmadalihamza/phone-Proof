@@ -1,0 +1,2268 @@
+{
+  "commit": "24044114e7ef21d198ded22b854d6ee94ed780a2",
+  "counts": {
+    "total": 376,
+    "enabled": 326,
+    "disabled": 50,
+    "weighted": 61
+  },
+  "scoring_sha256": "719f7f1b278b04652e5447978fe93d0d4d90ed3b464f608ab8eb13f8b8bd8355",
+  "definitions": [
+    {
+      "id": "system.manufacturer",
+      "sha256": "f127de41549ad313155107f5f64a66d5069abe093d0caa7d377f948bd265ef6b",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.brand",
+      "sha256": "3f4b02fc2f94b2c41f978836217e79ec74d1adf5a441589f8957ee8f5e163844",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.model",
+      "sha256": "7b655717366158b040243c01392e7fb3df47a2c36087658e46bb1ea1b6a2d05b",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.product",
+      "sha256": "edf62ee2e2246b01cad678bc600f4722d56f8ba8e62e12e085f6661f4a544cdf",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.device",
+      "sha256": "0a9913dda93588a1538b1091e8d4113f80332bbe380a5a7d58a56920ac7a3a4a",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.release",
+      "sha256": "2e55e7ed7b02908d11583a6f2233aabd05b698586e897ad4d10acc72e65e850d",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.api",
+      "sha256": "c1d54a77c8143fe6f383b8f96b2e4cebd38a88abaf2c17b459cd5867a06ef581",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.build_id",
+      "sha256": "152cbdb8aaf9b71f8955b9d83b1b32eca8d361b5b6530ad1fa7e4dc183751f1b",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.fingerprint",
+      "sha256": "16d4825af969618b57ee9ad2ede4893978f32683835b1597f3111308cfd8bdae",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.security_patch",
+      "sha256": "fa202a84e3dd2273364e656fcda9e20242eccacc3d2c0f9015c1b03083a6329e",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.abis",
+      "sha256": "98313eeb770500de5d01b9eedd9ac5fdc0e39ccfc34f44fa9ba58fa43a6a2cbf",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.processors",
+      "sha256": "3d69103525382ae70ce1f4b93f55a45b3a0a7af2e624a96eff41f4143d1e1f85",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.ram_total",
+      "sha256": "64afdc6e9c5bb4b93950c0a64467772a2479851dd409b107f02e45da8a55941d",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.ram_available",
+      "sha256": "f23c110d05865f827c1683a9b9b9bbe2bdf0a6f46cef19c6bd8f2d4c07eedef6",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.low_memory",
+      "sha256": "a19f7f4e78250655316171cfe4d524454a28efdb8b38a115bcc9c3598a8c1285",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.storage_total",
+      "sha256": "3f20f714a7d99768af0514465721c650245f2261783f67e34d72679ca980e3b1",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.storage_available",
+      "sha256": "0bf7428df7c7c5c0889bf3c5211edec5bbaf1e037f8f41e9c885bdfcf0d63e7e",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.storage_used",
+      "sha256": "26a002012bc2176938fdc4dae69c1b4f578d15a7a73526df03b7401ab680d896",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.security_patch_age",
+      "sha256": "185e63e7ea170d69dcf424c60aeb50314dde1c912469e9e48df3994d869f6f85",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.developer_options",
+      "sha256": "5a8d7bba4a0c6c41ba3e4b6133f5122a90dcc3d084a44fda5eb22ceb3226e2d3",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.debuggable",
+      "sha256": "f8ab98731f0b6a7a8a0edbd862eb7c5b8fb2b9f0eeb389b1d1eaa6ba8d739eed",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.emulator",
+      "sha256": "0618b0339d749ea9ea3a0816ff30acc908086ce2970152f5d49d9c6b5ebbe02f",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.root_risk",
+      "sha256": "5aef9a138c33c4eb9c32263b4d0d8d363803831b328193a907b7661647ce55d4",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.webview",
+      "sha256": "6a342fb17ef246b5177bd4d53d99a03cab5b8967277683faa5397eba5e2f478a",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.gles",
+      "sha256": "e22c5cb38669c78f52c2da048c91085e7f6a2b2706ecde52dfc92d76bd829c06",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.clock",
+      "sha256": "52cd173bdaf2fc81ecf02cc75047c3f032230d6d633f997dbfd16548231a507d",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.encryption",
+      "sha256": "ccd7aec47ff2376b3798a755081e298888f8f7e316aa86cfb2c12ecf863dd2c3",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "system.rotation_lock",
+      "sha256": "b1cbcf76e957439d2df82f815091ecb92c7a98c1aaeaf2b1b8e409ac3fedc509",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.verified_boot",
+      "sha256": "b00cdc616492422896f7e32f1e91eca7b4ed96a2e65da9f156aeab8ec8373b8d",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.strongbox",
+      "sha256": "16d9fc1abfe0a0741f71196276163ee63750db0b7f8934e3115c0d2210cc140d",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.fingerprint",
+      "sha256": "f3b3470d3501813e0dd8b7f63fc44e5d2378dea538899d99b140126f2bfc52e5",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.face",
+      "sha256": "23dd3a54e3ca0ec4ca4e2d24b0e4189df32e05ec70ea1c0e463d143f9cbd6dc3",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.vulkan",
+      "sha256": "6b62e749fcb3198c6a915bacfc807148003a6b563feba8f3ce3036e93e78f914",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.usb_host",
+      "sha256": "fc67aa90ad0deec495406f9850944888c9802796d280f4b6e5702bffc014ed64",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.nfc",
+      "sha256": "c3803cdb776bd5f419a1127b9bc76984e36e6a165e79896b3479523ee219b6e4",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.nfc_hce",
+      "sha256": "d88404121351d226faf871ac7c5e9a9a2695a18454cc829859ce5906e180213f",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.uwb",
+      "sha256": "aea74ff2c1cb8ea0f4731c8b48684d5cdd955f7ebfb5d824517ca40ccde03d68",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.telephony",
+      "sha256": "2dbcf8d94a85f412fb379295d79cdbf46e91efbfdbf14446725479a617538709",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.esim",
+      "sha256": "6f7cd9be44f32afdbb9a828ab6b6f7f33117669da39f620ceb53307580eb5d47",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.bluetooth",
+      "sha256": "8ff3ce3d606a3187316b8b47b3618590c0a9744d5ba1365ad133d88f2922c8af",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.ble",
+      "sha256": "d6075d08c584b5ff1cdf23af06871a20bee00fe43f77526d9bdad816ad7fc46b",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.wifi",
+      "sha256": "8d8a28a6b227ba37e84a6b4277edac6be4887d32a40669e8c09cd03f44b59fb5",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.gps",
+      "sha256": "20e4b6938313e3b6c4705986ec600b89a21f8aa9e80e0f46c7464f8fc7102bfb",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.microphone",
+      "sha256": "9bd0983e3251c5bf6d5c9817c23071bcbb412a39ccce867a1bb0395b62b92aa4",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.touchscreen",
+      "sha256": "6706da953d308656742e80004f7d7504d065d35c6c66de893bc538ebe7956f94",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "capability.multitouch",
+      "sha256": "eb6076f0caa3b7039c020529e1c8e9533458bb79a4c40a8c84058abd0228041f",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "security.keystore",
+      "sha256": "50ffbb8d56795768ea3496ccfeeb741b7c2734017409ae52f7f59e4a451f48e8",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "security.play_integrity",
+      "sha256": "dd3d37f2a1b0becff6fa610f7eeb9d91d9573cfeb04a98a7a4058b1d9d365a97",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.resolution",
+      "sha256": "0ce48f98da4e2dd2dab1c8d5d872e23305b9098c85dd23c94cb1fb94537f9560",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.density",
+      "sha256": "dcfd46998476910cdeabe41b5a8d17fc929853cc5ea9dbe8f2eb10247524f721",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.refresh",
+      "sha256": "813d8ab3e96d8237aef12653dfd04b6e460e08cf9935978318b69bd0dcff5526",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.modes",
+      "sha256": "05e42ecfa6d3685edb545fed3ffba878ea27f0913d2f30c5d6adbd6a4c9e55d6",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.hdr",
+      "sha256": "666e49484ddea49f0f9a608741bc089c50343b3b46fba5ac98e13e1c55ef18b5",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.wide_color",
+      "sha256": "f564acb612ce061c537e736445695ba8d8f1eb3683bdf03c98a1a0b298e030b4",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.state",
+      "sha256": "f28e2f2c19d2935ef024a14bfd910752c9007cf1f6cedc8a81f0effb1717005e",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.red",
+      "sha256": "38e6b928b65eb14adcbbbabb0821678e309570fe3a46966ae980e9867cd1347c",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.green",
+      "sha256": "d0d043025653a6bb101f313d7a19f6f3bf63eaaa84928ee23167e40bff32785d",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.blue",
+      "sha256": "057113b9f6824b6982a93c9301b0ac79ebd7e2581230c83536bf1e5a6afe3ec6",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.white",
+      "sha256": "509b7eedb378d3226e2ade1c07ee03da290812ceb9806163a50abdcbf0243eb7",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.black",
+      "sha256": "83c94a252c1743ecb4ee04dab8140a48b17204f28bfd1fc0a5b904e7f128ea74",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.gray",
+      "sha256": "0267d700d3a1e896f9a412592f01e1f59b31c75d9d9508fe697a26d82a476ff4",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.gradient",
+      "sha256": "c4682759e5454d0e2f9f9b3c0375092d9eadf0be493a2f43d960d2bee50aa283",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.grayscale",
+      "sha256": "95a458fcba00aaf0c989f3bacfbb9b43bc32517c3c003be4da10d0f763b596fd",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.dead_pixels",
+      "sha256": "9d53ea83c29dba48737ae55cb7b5b8cb583d2b765fe8187f2c2f30c9fdd8a50a",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.stuck_pixels",
+      "sha256": "8e886b7800f959bd738782dc08c7cbf29f72954724ab7425571e271dae786353",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.lines",
+      "sha256": "f7ed512d4b2827ecac158807695f083246d8d0e693999a64396555053ec46a24",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.discoloration",
+      "sha256": "aace2841d2a1f035665309c06085e997562f6e60f895427c2d1c922602a3be3b",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.burn_in",
+      "sha256": "9d3613eab5a78f70552102d4d3e40ddd1ac3c54552bc3b6b3999b477c3dcf45e",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.flicker",
+      "sha256": "e41509cf325c7ba3d83b85e4bf042ebfc6dbe6832e3118e5dd3c12418bbc8c6e",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.edges",
+      "sha256": "c2b79951380a809016b3611aa6b99a77814684cd34c0e3289677ab8d09e88cbf",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.brightness_min",
+      "sha256": "71e626b67fbd3c3602f4c9d794b052d2fd2d1cd465f88e311be104c4f9a07949",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.brightness_max",
+      "sha256": "8ab872473adf035a22609591759a3eda913dcdf49a6074376f8b6459db47b2a2",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.single",
+      "sha256": "30fbcf78ec8319eeb4352905c3ec5c43bd7ccac500ed0545ef6560579fe98350",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.grid",
+      "sha256": "d70cbe724dd410cde7284679f1fbc4a6de52ed987f87510ff1db9f9796480c54",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.edges",
+      "sha256": "c0342dc625d515f7300340234a2e81fd12608e5b1425b451c03e95919c6ab411",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.corners",
+      "sha256": "d5ae8f3b7832f6e471620dd265a5089415d8e95ac73c038219034465207e4138",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.multitouch",
+      "sha256": "d3dedd83f29e90f8f76492baea63d6aea9ab992ce58f059a2821b0a6e24dbb61",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.three_finger",
+      "sha256": "5e85bf890d627a3995485e65b904526e8fbe2f94bb675fe092c7076a2e82c2d8",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.drag",
+      "sha256": "1e1f882eacb72ef093735a323861dc0de2f1ae5ecb77c423a62e34f9b46f2976",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.horizontal",
+      "sha256": "f7ef291acff8c73019f6f35e7a9f37558ed094ae1fa7d105eb72ce0a914bcdfe",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.vertical",
+      "sha256": "fd8a036ba6a35e93b8d9a9d613d01e543d16f8c88a09946406fb19647369579d",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.diagonal",
+      "sha256": "5b558899659745d203de06910c1b69b50522b6b4c3662fc789058c72c52f31df",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.long_press",
+      "sha256": "e42b84c0f069fffdf5b4cdd4c01ed86f0481a1036136dad879297353987ee692",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.rapid_tap",
+      "sha256": "1f87efbee8a1f4dcc545c4d4211eb2b10d8fae71bb7fe69d3511b036f4493b1d",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.interval",
+      "sha256": "cc4983230adc649af80fad688597ead8e618208eb868a04eb1d6f03e00ea814b",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.jitter",
+      "sha256": "03f2bcbc0387dc2afec066ce4738db5e43361352804bda0e01971a1a45672994",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.level",
+      "sha256": "6dc614adc71ba18faa561ebcf41055a641ddb47b0d7ec51ff446447ddc58372c",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.status",
+      "sha256": "4f6c1d9345bbcd514010fdab1e1ffafe1c6156723b3b0654c457c758739eb56a",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.plugged",
+      "sha256": "cf1a9d1a4f837d81fa9c5fc4a7a449bf06c2131c218c62ec4744fb83b0766f78",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.temperature",
+      "sha256": "3f337691c1e3ae541000d5e6830fe4f483a37c7d90a6114bf6c8d37167ef4c95",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.voltage",
+      "sha256": "7769ec20cd9b970c6b8a87c670b37690174ff82427d3d57a6d16955acbf54df2",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.health",
+      "sha256": "7840ce05ce9d5ab836fe2940e7de5c4a78bfef5f274491e0482dd83d4e73b682",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.technology",
+      "sha256": "8508df4ebbdf15aaa3a9bb73def6155e9b01a0476efbd3d3feb49eed80ab0d79",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.present",
+      "sha256": "7779c2e4a00f38a9910f4a2b30a5e0487b4fee1923858fddf95f52eda6235685",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.charge_counter",
+      "sha256": "a1c373e547a00c026a3f2b1b0a4528d7d247ccc13428bf39e00d83345346e69f",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.current_now",
+      "sha256": "bd44aa73da3ab9ab9aebf5067f11685f9641db42abdbbe3972cd3ff2302b8bac",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.current_average",
+      "sha256": "4e00b7bd83857774dbefe116f900c3d11de7b09c0429e9d67ae5d5a54420a5de",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.energy",
+      "sha256": "5b6ea54268ff55db07722a39d389a23675d1cb11b4a721dfcce0203a1dd12af7",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.cycle_count",
+      "sha256": "71f1fac2e3dbac95365deb9aee38dd85c4a7e01a252acdc480a68b7820dc041b",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.low",
+      "sha256": "5f7fc58e8424b1e49c92184f88f00e332fec6c7d970465e1f162cc24069ffa9d",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "charging.connect",
+      "sha256": "8e8592f68f4952f98223ee10817eb1017fee49b61e3b67c491b7c616bb185385",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "charging.disconnect",
+      "sha256": "d234b40488f985446f40de087e71850fcb1b0f595cf12e7bc1b6ef6b033cf18f",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "thermal.status",
+      "sha256": "7120ce09680020083b78f94e5acaa4fb36f1b491669aef3571fbbf4b5e309c4f",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "thermal.headroom",
+      "sha256": "0eea92434fbe8e871b9a2df366c55c3b5f913c7b773be26ce32e647f8a518461",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.accelerometer.name",
+      "sha256": "c3d29264e14f5c3cda0532619d8b72566a62cb99647deac8f4fdbe4091e3cf5d",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.accelerometer.vendor",
+      "sha256": "9e459fc4cdb70035adcb6fb86337f35e71cd6a3ad642e0b25ec4e71a8891efee",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.accelerometer.version",
+      "sha256": "4f63375b6a9eeacff01523e554be0a79944d79e1d21c50e0d53891071a3a6412",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.accelerometer.range",
+      "sha256": "767707b5375e018eb7ef6d548b45423cf230e484a2e8e09b086a7416b2f0413e",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.accelerometer.resolution",
+      "sha256": "e306d9c3e5aa920009f5b4d820bba37728dc0a2a8195efeb77ffccc47ed27fd7",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.accelerometer.power",
+      "sha256": "63995d2a8f06277194829d94f3974fb3ee027144b3b8cb93934c7385d609bc89",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.accelerometer.min_delay",
+      "sha256": "05c8743bf7cdf508f33969d48e382b4915ec77d51c63db4c62299b4923efe6a8",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.accelerometer.reporting_mode",
+      "sha256": "873308ddc5e1e4918706e932dee7da2093bec8728cf807f1b4ed42b68d7670bf",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.accelerometer.response",
+      "sha256": "36cc59cd84d4167f6a3b5ce4c6faf958d78937c82be289cd5d7d1db467554193",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.accelerometer.continuity",
+      "sha256": "08457357669befe60c87e22be17dd65bfc7357e831c7c5a4aba4a84d308543c8",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.accelerometer.variation",
+      "sha256": "a40d37a1e99cc04e8c3e1c4283c99901236790c9b0ac2f17390e2adc17698725",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.magnetometer.name",
+      "sha256": "4717e9e14e57b32ec83a023bf03b853c0071b8db0707eeef216ff6796e490a27",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.magnetometer.vendor",
+      "sha256": "8d7f436504d18f045733e01bb9c7f01b504c3176f85873d89e0447ed8c4098f2",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.magnetometer.version",
+      "sha256": "00497690a5ca7c92c66e8e71d52bf6a51e0707e467ec6c0a3d00138518e92504",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.magnetometer.range",
+      "sha256": "24188e72c6b8b4282c68391811d81b2774d0d9a9bee136ee85d2d347b32c5570",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.magnetometer.resolution",
+      "sha256": "cceb439a4a520c486c3341971a8bac9349e141edfa1c6784ae447b9b646b10f6",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.magnetometer.power",
+      "sha256": "9ee69d1c1fff1fb06dfb53d9e5fe4c3122d8abea0338145c3cf98d34ac484573",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.magnetometer.min_delay",
+      "sha256": "942def745f48576e27321786e0e71b14714b5b357fa975a3c3770570eb23df6c",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.magnetometer.reporting_mode",
+      "sha256": "66cf184570d15d8ea7699b1dcfa40e709cb9bf24d27a7746559ef0b40d9ced72",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.magnetometer.response",
+      "sha256": "05e354c143a7e86482089151f68d1da544c980cf9049b1134049eafcb1f7f04b",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.magnetometer.continuity",
+      "sha256": "400394477f74504c11c117ac6bd1a14bde807154eaef09028463cca1a9ad8273",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.magnetometer.variation",
+      "sha256": "c165a7d05cf35ac5e35d9344ea7f9c814951e0408a78fdf7a1544b1d7c6ff740",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gyroscope.name",
+      "sha256": "012511d2650f781895206f272da9f7e22ede4a91d4557592124a00e3173a8852",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gyroscope.vendor",
+      "sha256": "0ec525d7a5a73a2ffa3947e2dcb5d633a1acba04a2db19af936d75c3d9edd081",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gyroscope.version",
+      "sha256": "dd70f6c414514f0ba21121fdcd93413668a1d9d0b8bb2e47f5201389ba4a6031",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gyroscope.range",
+      "sha256": "4112c7a2c3e30fcefb7a11defee5fa60ba7908e67fb981cf24656ee3fd88be20",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gyroscope.resolution",
+      "sha256": "f08e961b63a0ae380bacaf0c057db2d24d6888e6efa3c0cf0e2c456a2bb37ac8",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gyroscope.power",
+      "sha256": "8ccddf9e737e3dd4e5d077d21def0747db67dc0c62687d2e903cf3be03cbfcab",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gyroscope.min_delay",
+      "sha256": "cd270c4e227a6a6c3cca2b1e85335c43da015bc1e5a4c2d3d4b3367ffc4bea4a",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gyroscope.reporting_mode",
+      "sha256": "ab0e1bf807816b1c4c4345f5feae0a1dc46c51c5e8ba95539766415565b105c1",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gyroscope.response",
+      "sha256": "5571b389077932e6bbcda41c0932ca9da5107749f838a879ae4de674342a8902",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gyroscope.continuity",
+      "sha256": "2badd7be05fb4c23c835a747ab9b01a937fce85a52914d44307c5b25c17e367a",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gyroscope.variation",
+      "sha256": "0113a49de71aa9c889d435629dbad7300f09f5353eaf2c22aa7a35154b63455c",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.light.name",
+      "sha256": "16d4264481badf59c03f87506feeafe86c58def94c81f100e17ff9bce05cdefd",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.light.vendor",
+      "sha256": "bba17173ffed5408fba4f81834f1f1204c65db843ec8e203591c7f1e574bd1b3",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.light.version",
+      "sha256": "849f0df2def6f1d15407c412055f6fb20cd33148b5e468b0838234630957734f",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.light.range",
+      "sha256": "952b662a3ebe62d5f57ce85e7a368d32d41dca5b2c469e006c8149e022141696",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.light.resolution",
+      "sha256": "f8d07fdc1ce894eeb8124b5b726734ae53470650bf104811a72dac3694e8ec18",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.light.power",
+      "sha256": "01130d635d596aa46b3a90a6792e4d42d957ffc336cb5e6758a9acbebffccdc5",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.light.min_delay",
+      "sha256": "8caf1e031eb4bcfb5d176deeab80136839dcd620ae333f2dd17a5b59513b0523",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.light.reporting_mode",
+      "sha256": "680c0ae5d9721b9dce818c817537f5ab8311e4e69fb006268188a0e3f1b920a9",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.light.response",
+      "sha256": "9305b9034a459a4dbe11638e4040d7661e87207ad74a34f06ee7f1116a94f17b",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.light.continuity",
+      "sha256": "31e77a94748d6a9e012b9fd723754ea5d7018cb5d8bb53c5aefe16402e637d40",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.light.variation",
+      "sha256": "11af90d4ede027d13f336c6b6ffc88abede46ce91c6d4e05f81aee0bf464ccb6",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.barometer.name",
+      "sha256": "030277942e6e6f6f011ae9e8785e2c7deff8827528c4e48931f43091720cde3a",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.barometer.vendor",
+      "sha256": "c93c213fab2bc6367dfe89cafb4069bd3b205f99aee1943d01ee1357362d1e56",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.barometer.version",
+      "sha256": "56a4d076368647a62196bc65e646142da1a7300120bd5ad07d57dc8aa13fad7e",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.barometer.range",
+      "sha256": "d01cf61b3796ef0044b94207f149c49fe3e769a9d9bcde54b7d4b4dd23c24a77",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.barometer.resolution",
+      "sha256": "14f5795eade7088286ca3952a1855459601e1fe5cf212b117bb5de1447c45100",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.barometer.power",
+      "sha256": "d75dfff058a7d4f819ce766a2138bc871e4da9e89d615d2a7715e090c024b217",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.barometer.min_delay",
+      "sha256": "c7a967e40cdd0ead14f9a8e34403a500be38843253943ce8c535caf7412caa80",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.barometer.reporting_mode",
+      "sha256": "831da5016212a75f2d5632b7f82ada0e2be6d0e6ccdc94bf07e58040055bed4f",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.barometer.response",
+      "sha256": "9fa5f0f96c1979c7e2690d520f5e04d35ccd0fe3a6b72e54137e58546cb593ec",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.barometer.continuity",
+      "sha256": "72d998fd42d312985a4041e67bbf1a8a1008c8cd606c489d4f8ae055c33b1667",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.barometer.variation",
+      "sha256": "f48421ff27d9aca05697f600b0bd9113fa80e9a3df682f666da31ebdcd4868a4",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.proximity.name",
+      "sha256": "7da84ae03cca3eebcb3987bf8283af85312bebb3b32c3c770a7b50af1a4daa3a",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.proximity.vendor",
+      "sha256": "5f6637d3c3f011474710a6a5031a545a3f3a633cddddc2552e1bb79d48ab869e",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.proximity.version",
+      "sha256": "eaa7be0c01f0da93fc9a6080072225187f28f5c1ffe89a4274859dadad42d109",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.proximity.range",
+      "sha256": "24e8fc67d9e0a24765d56ff64456506768808f25c409ae0291fbad50cb3a290c",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.proximity.resolution",
+      "sha256": "4d8ff29e6725d2d29de4a75407601850ac9437849f29e91a9d9ac78acf334177",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.proximity.power",
+      "sha256": "06f88593acf45df524116db6990c0874e5a8e1dd14d422348f4664119301c0a1",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.proximity.min_delay",
+      "sha256": "93aba4686e503419a3e4d318db1ca91143cf838a8e61be7de8ed15d53d7016a1",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.proximity.reporting_mode",
+      "sha256": "56be65c1da24e0987d74df2d940525a307519b821876f1f21d02f7dc60d42a38",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.proximity.response",
+      "sha256": "3d74b8a7f27f02fa685a431250a68b789e8e909eb514fa836517a77a6b9e9166",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.proximity.continuity",
+      "sha256": "cfcb206cafeadcbb9edc065f7e4af5f7a5167eb3e2d06beb364d62c9f1b15999",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.proximity.variation",
+      "sha256": "f73cd4af79445f2960a295e8cf9456fcbc3a21a38ad4fc4b959c87288f0d2ad4",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gravity.name",
+      "sha256": "61df8c556279c2196f43e470da425d3ca0621ebe5f0dc87be536374e7b8f4ac5",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gravity.vendor",
+      "sha256": "6941a5ad80d63be4453c6165441657b888a077a267449b72f863a7499c46e47d",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gravity.version",
+      "sha256": "7e39a4d1085d8312fd3fa6b2b13a0ad6a168ca8470e9d1eb7cb4a5d31508d1a8",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gravity.range",
+      "sha256": "006de2263746b3097d451bafe0d614e02bd7c3240613cc18c3245a9367aad561",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gravity.resolution",
+      "sha256": "1dcc51c4dc9a518dd1ffe9b548424cd2d3abdca8b8c5766d01557d8dcab52563",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gravity.power",
+      "sha256": "d2d522e1706aa2d70c76a1e22bdffc90b9ae7ab2c1d19a6a73908c39eb441f68",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gravity.min_delay",
+      "sha256": "f69fefaee99987a3b4d7c451297cc0b2fc95b30b6654643ad52ab975b3e1b13f",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gravity.reporting_mode",
+      "sha256": "93504e8fcce171e3745ab4668da9a87c6331026ab4b4d5aeef322b66c4b273e4",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gravity.response",
+      "sha256": "37565ea98b8f75c36e4f2a05b518580e343362ebf137b34b0bd3a4877ded098a",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gravity.continuity",
+      "sha256": "fc477170da2bf900504f3f95d3027d9832e4a4c190bb31b525d32a690158c91f",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.gravity.variation",
+      "sha256": "c145d3f0858c608f98623a74bd077a6f039de198e5fe4f5841936df99569169e",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.linear_acceleration.name",
+      "sha256": "b30a4a7558597d74b8fedbad70adda3c3d1f940d0b9d2bcb84a64587fc95b4cb",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.linear_acceleration.vendor",
+      "sha256": "164a675bf4808f75fefc6b0254b4f14b7979ab2240ea5a9f03ee7dd2cad0c059",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.linear_acceleration.version",
+      "sha256": "a70173728343edf25b849cfff323402e83b39d2b9f3582300632561d108415c0",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.linear_acceleration.range",
+      "sha256": "3f42c5a19e8881138fb179e329ab2865b0b2c01781e3861bdeb712156218817c",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.linear_acceleration.resolution",
+      "sha256": "9178f916c48c2828535e3ab08906aa625e5afa6e2508e56a1b51176442479ede",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.linear_acceleration.power",
+      "sha256": "a83377a188cf5817dc3910c7d60d4d2d339332fc4f71b414564788f2e8146143",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.linear_acceleration.min_delay",
+      "sha256": "01c4cfe29f405b6f83e706e3f6ba3a806c3ddd848554b95867ad730fdba1692a",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.linear_acceleration.reporting_mode",
+      "sha256": "cb5450c52f0c70bfee6f86eaa8b1b21331312b7806d621373d652f47f376ef85",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.linear_acceleration.response",
+      "sha256": "30ae5f3162d2154e72cd6117e59f727b26dc93a949a71542af1d3fd59c8122c8",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.linear_acceleration.continuity",
+      "sha256": "71877d32b50f94ad40f0aa99317b94650122eea028f9580faee834f48717dc0e",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.linear_acceleration.variation",
+      "sha256": "99f04b7d4201d10bae59fdbc930eed5ab1a28f0a9a9f922b2a276e12be0fffd9",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.rotation_vector.name",
+      "sha256": "006cef550df8eb28c476ec8a935dd5e7928a8b5712d1f287d211330d24b67c55",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.rotation_vector.vendor",
+      "sha256": "e55e5fddec89a0a9a598a47170aa6ce2e0737ff4d5dd0ba58b87259e37d53aad",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.rotation_vector.version",
+      "sha256": "2720576b67f7f2041d2afd6948597f19a13718d79e8c11367018c3ea76c17343",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.rotation_vector.range",
+      "sha256": "b3b2f7cb12af472f68893d7f6d57fb14c981952f3b53524f7450ebfaba21fd1d",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.rotation_vector.resolution",
+      "sha256": "c1dc2ec6835f1e41ebf4abfc61c5a6d099bbcf91356b60c3cbdf487b5e6da374",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.rotation_vector.power",
+      "sha256": "a2fba817d55e407027559ca5e6b9311b8192746cfeb4df1c458b0f2334e60b8f",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.rotation_vector.min_delay",
+      "sha256": "39a7128c11124bee8c3f39393200dba64a68f107cdab1e793c4f75e70f60cf50",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.rotation_vector.reporting_mode",
+      "sha256": "15dab84e5cf638cbbac4a9a97efa5d1b52db2820f117fe3d0a4ea4576765199f",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.rotation_vector.response",
+      "sha256": "ceadeb14023aaf979443f33c3fd1898fe9a775cdb54e6ea43b1b7a8e13ded835",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.rotation_vector.continuity",
+      "sha256": "8166135b9540bffdaa740dad052e52a26d2ae352485870fab26ba86d84c4e9a9",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.rotation_vector.variation",
+      "sha256": "96f54e714167a279bfebf833db7e4bf7501bf8b636780c3fba47495219a4718f",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.humidity.name",
+      "sha256": "2c2f17c1072fbe51b3ecfaee8bd4aa1b6fa8f7110f0252da6b79028b74a921b5",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.humidity.vendor",
+      "sha256": "b10c452b10212ef23144612b6f1d83c5464fdd83b00c379db31f1d88b361814e",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.humidity.version",
+      "sha256": "3c1906ee207be42c8c7a30fa0b3b6aaa12a73aa30e8d0fd578242a688246b074",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.humidity.range",
+      "sha256": "561155fdf7a7b8b9186b734d47ea779cc7ea9bb90e667e64d0329fca6b33a448",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.humidity.resolution",
+      "sha256": "096c1c861149528bddd46a295a298839b9cb45835c35872c6118136f8abd6363",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.humidity.power",
+      "sha256": "70e02a3264aac1427fc1986de0127e194690382696122fc80b8a1a46086040af",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.humidity.min_delay",
+      "sha256": "1d9c4505d209d81bdcc086548a2b55a9940f79e471dd41dcdc803a59a902a16b",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.humidity.reporting_mode",
+      "sha256": "2597233f844b0ae7190a1706391db022c7ee66eb724be09e0f9185f9f64c7fb3",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.humidity.response",
+      "sha256": "669fd8bd47e1f6cda4787200baebc814e055da50282b2cbfd3c3b8865a830a5c",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.humidity.continuity",
+      "sha256": "4af9f14e236bd6987f664fb3899009ef16ea84fb4a4db5965563fa0fb53d2176",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.humidity.variation",
+      "sha256": "c0fb6afdebe625452d7fec6448bf88c08ba0a0aa4c6c77f0bafd7f9947bc4061",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.ambient_temperature.name",
+      "sha256": "447b3b2d31c8d8fcb5558d9e8f6314f652e0f5fe60197523eb9787ee151abde4",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.ambient_temperature.vendor",
+      "sha256": "6d1caf82b82e5f8851da9ecb86cc6779cfa804cdd0f9be6948154d7dd6f8f40a",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.ambient_temperature.version",
+      "sha256": "cb7c510634c302e72a4c57e160e0e5fc4f7afd6cb897ac62ba4addda0e34ad14",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.ambient_temperature.range",
+      "sha256": "c225fd00d2620018785b6004fadac4e7e30693ed695164abfdf06244371f1f77",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.ambient_temperature.resolution",
+      "sha256": "0f4fab451e3f2d3b78b1c886f50d5c208bb87c06b7680cdf02a4299fcc54d6a6",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.ambient_temperature.power",
+      "sha256": "4f511a94b3c1e3da7100f1d2e3a33b43e481c9f1cf27bba7d977b3b9cfc74258",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.ambient_temperature.min_delay",
+      "sha256": "af22f919fc86eacf8de3092b0f4dd65be9b5366fc55b6bda106bf4590c0e48bb",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.ambient_temperature.reporting_mode",
+      "sha256": "f6a18b6f1d24e4fe4c018d11126ed2ed8f6a5c2a09942dd8f9e650d0e45023c6",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.ambient_temperature.response",
+      "sha256": "e7ac87991db9169b219a23bf53464dbf3053c09a67e58305e734693a0dce573a",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.ambient_temperature.continuity",
+      "sha256": "a25a909b5345c3ed048fbe5247d1f55ef1cf3523c626e12febe2641811fa0b22",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.ambient_temperature.variation",
+      "sha256": "ec4962f091547cc3717d9f83a7973cf43b051e55f097f4c4b5428d7001e1baee",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.game_rotation.name",
+      "sha256": "c275ef0231f06d7a8d750caca7f50be91bd5a847835c150ccb3e89274e6f55a1",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.game_rotation.vendor",
+      "sha256": "4a1c4315765f3711de73bee282435ab74a119ae5719372d2cff893c2e7a445fa",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.game_rotation.version",
+      "sha256": "e40a88f22c92018b85e8d33ad3759b2a2dba46f84c55cfc0bd21a80da8a8e69d",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.game_rotation.range",
+      "sha256": "531e5e4d7d098ae0130c4a362bf3972cb519a54585c45079a4f112091593ec3b",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.game_rotation.resolution",
+      "sha256": "607b2f4ba334387c684f9e6990630f132a36885b1bbc69616fc1bc3793da8346",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.game_rotation.power",
+      "sha256": "8ca2c9982d93088c76feed3143f38783872b30c34cbef7fb50ed735442219adf",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.game_rotation.min_delay",
+      "sha256": "5d7fd6496472c21810f00bf962d9472524c6a872925f85824c383a858d99be9a",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.game_rotation.reporting_mode",
+      "sha256": "ab62013444d1769ef64bdf7d0cffce42e2a2c75b76f636776066d8c6d94627cd",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.game_rotation.response",
+      "sha256": "8136df40c5b306d8a53cc85cd7ea807e37cce5fab5882b8b03ad93d7fd9dbfd4",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.game_rotation.continuity",
+      "sha256": "9124748b0304fc1b9a1999ac9c991709af51a250e061fd6815d41bd450f44743",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.game_rotation.variation",
+      "sha256": "00cfd5c23cdee683cd2a26181369c6fa7827b1e879bd629d1402675fc8c25fbf",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_detector.name",
+      "sha256": "3618ba2fc31fe7b21cd7d387fa2c210aba83292328fed1470267dd28e02c3d45",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_detector.vendor",
+      "sha256": "66fe018a735b6d4f72cb6ed134a78b6155f69858827d51395d4d7e47fd6b0623",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_detector.version",
+      "sha256": "75d9aff07b867214acb42adae6457098a1becbeff20dd5d301f848d191ae7448",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_detector.range",
+      "sha256": "8755e239ca849468830fcbafd7acd6de0504c9be89e4b4c622270acdda453caa",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_detector.resolution",
+      "sha256": "f2c4643b16c10480cd653ebbd5007ec3deceb13b0c0cfece2c3c14e2d5d9a4cd",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_detector.power",
+      "sha256": "768f31c02006fbe6e8f5a07e60cb517b67ef006da5d4deca040178557c6b8b87",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_detector.min_delay",
+      "sha256": "877bdde85eaef224e2e4745a7d1f1854ed9d889b7810c3aa84e10b1f5dcfea2c",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_detector.reporting_mode",
+      "sha256": "461be5f648b648eefd03467de6b08c66650838fd382adef2c2fe8328beab9a44",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_detector.response",
+      "sha256": "6c53a86f5e5cc5f6ab5c2d4166ba863c421c4f78fcd5ac02103c4a848914c129",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_detector.continuity",
+      "sha256": "720906b8e0bd8d74fe68ea8d7b9cee3da3ff64011a5b273fc39b95b982e3da9d",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_detector.variation",
+      "sha256": "be59b9de68b6a89e97c1363f7b66c0fcb4251283190a92c503eac7ef76c447ac",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_counter.name",
+      "sha256": "4fb713c9bcf72b35617de65799ffbdda64fed5a826c8145fe59ebece05017f77",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_counter.vendor",
+      "sha256": "fa309b2fe751df95bec4f0c1fca25f34f12337bd7dc163d8d7d1b6e323be0448",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_counter.version",
+      "sha256": "792181b28d2103a7eba6a2ff37306b00a98e848793c59e86dc78d251c12e9a40",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_counter.range",
+      "sha256": "27c69f2fce93c318f72fe05e63ab3400ba2fed333734c4bad59e9e74c1de82d1",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_counter.resolution",
+      "sha256": "d4fcc1d4b45a7913409de897a5bd97e5c24e839275f4b76098ef41d8a75a914d",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_counter.power",
+      "sha256": "7ead25e7383ea76c6c422b9fe8cae574cc3a1e37b7ed47eafa20f9144ff412ec",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_counter.min_delay",
+      "sha256": "a1eb042b5a2c1876678e4191cd83246e2d1b7a3b732561bad4a803c6923b092f",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_counter.reporting_mode",
+      "sha256": "a799ae8842930e0629f6a75beb10ebd7758a733471d13ddccd8b053c79d9055a",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_counter.response",
+      "sha256": "d4ee9ab25b46f8b2bc0896cf386af6c957cef4ff7c730b6124d80f73f5f17c9a",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_counter.continuity",
+      "sha256": "460ce6755b6dc9f32086a6786a7786ab55d2d2247b7fbc38305c9bbc25560466",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.step_counter.variation",
+      "sha256": "81422541e2400c061daca3b849151d235de7727c1fd4070f4a4783103795ea24",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.hinge.name",
+      "sha256": "f3621ae8ae4e6a6e1585cc5b05ff17041d71832f2a8e6c3e37a90fd37f51f192",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.hinge.vendor",
+      "sha256": "169b572d5cf2e815ced11ecfc226804832890917d5086d4b517393681aee69fb",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.hinge.version",
+      "sha256": "8eaaef6b2063e4ec03ee0b670b672d2c0ff31f7c1aeb0f9b8c25d6a51daddce5",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.hinge.range",
+      "sha256": "810e7c33f3d231f23b449a1b217e309ce3a305b4e1718dca849ffb0ce3bf30a4",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.hinge.resolution",
+      "sha256": "3efa38ee011efd8c8c9117c4def874edf12b2af7cc46c49d4802130344dc4642",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.hinge.power",
+      "sha256": "3258a413c56cdb92524966811735496e71aa1a0d6d36d5d901430d4df7a046a3",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.hinge.min_delay",
+      "sha256": "9c8bf4ef0517db87111a2d33363f5433905151fa044021b5b6c8ea6c8228fc57",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.hinge.reporting_mode",
+      "sha256": "108eb3eacee6fc0f0b9222c13515eec0bfe3cde3dc7aac0301217285d1898e20",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.hinge.response",
+      "sha256": "7415386bf8846c735d22a3816ebeba16e68641395ceac89a466977a0e5b58e3d",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.hinge.continuity",
+      "sha256": "5ae0fb33be31df19e02eb54dc3c45ef99884ab91237471017d0e86f95954dc00",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensor.hinge.variation",
+      "sha256": "3cf5a94b98eac380617ce76040e3e96eeb9e1b8832cf19db9b7b8b991d208305",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.facing",
+      "sha256": "7e32108e07b18348f2e144923a561bc2bfa6b548f261014728b8f5fb5b166142",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.hardware_level",
+      "sha256": "2ee7ede3090a0c0014db5ac513325134f3dbc78ba340f848a52beaa967f8fba0",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.physical_ids",
+      "sha256": "2620e0a1f6be451279f96a0c5cf45618d56b194dfa1c6a806c3e4df58b440e56",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.sizes",
+      "sha256": "a83ce7072048469617128e00a1f6f36724d8a60094bd4d29868897a86bc6bdc7",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.focal_lengths",
+      "sha256": "2b948636f44554b75b2e1cb11f960781489d45cecbad274102b57ff246258038",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.apertures",
+      "sha256": "309c7739fbb46b63e694937a9469b96ad40e5d8c561626c5733e2e634b7563b3",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.focus_distance",
+      "sha256": "83cc8b636911266399ad377dddbe923c807c61c873aea5e72bad990f31b3da88",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.af_modes",
+      "sha256": "6f9c60b2924522c82f7dfe391e47ed9635356e97a24fec06bd4acdcef9a6f2f3",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.flash",
+      "sha256": "27535b1af12ac7dfcab750b3ca9a3c71633bd84c3cba827ce886683f1ddedb60",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.max_zoom",
+      "sha256": "ee2c2f016356969d1c5a16115226cbbe50f8913daf533bbf2c1b0cc6ff24abec",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.ois_modes",
+      "sha256": "11204876677c443ac089b947103716150ed4eb387cf66b91d1e077e13ec3c823",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.video_stabilization",
+      "sha256": "f27e163d6abe3f47618f58eba7cd662a9c1534729111cf2e2ee8e2a2ea49d35a",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.capabilities",
+      "sha256": "ec3662d9ce7d302c53653905faccb294b19479c415d1ef0d5b43e8a7ea01cc49",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.sensor_size",
+      "sha256": "4faee2d47f627d7af272354e4ebef75cdf59bef017abec7da3fc3df2960616b2",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.exposure_range",
+      "sha256": "62957904040f9aac5b099a589823fdc37480b931e677422811039603cd674fb4",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.fps_ranges",
+      "sha256": "59c7caaa4a8c8a68da943f945b310c01fd43b94feb4bf3c8b293a8cdccd6895d",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.preview",
+      "sha256": "9df1703d91e1b09837d7555058166b8d21bb008a3c80bf88e7e8c991bf0d36b6",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.capture",
+      "sha256": "61c9585572a1bc23e9c6836dbf4644933a71502bbdea0a289ae7ac3bc50f14e8",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.{camera_id}.torch",
+      "sha256": "95fdabb136089438b672a2eed0d7104d2b959fcf411b02c51666badf0704ca07",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.inputs",
+      "sha256": "042f9e328000a7906914e3848f27371c7a9c2af3461415c2831ab3fe1f6352c4",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.outputs",
+      "sha256": "d3b1d0a087589e2345df0e745f37aa5c9249dbabb77e98e0751bcf16f44d7973",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.volume",
+      "sha256": "d78b927761e854ff8462082fa4fcd16058d316fc51c0d2f9fdb9cf5f039513f2",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.mic.capture",
+      "sha256": "cf6baad06c1d76c31ef774dedb0f14309a07ed03f48cc542c1380cf3d5154ff9",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.mic.amplitude",
+      "sha256": "acdc6c016b4a120b81591f4b4b5da9f2d22e00e3d6843b06fd79e25a9bfe4443",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.mic.silence",
+      "sha256": "c26479f41fda910d1aec6b794d91ad1c26d3d5b4936ee45235525af9b2c858b7",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.mic.clipping",
+      "sha256": "1d97224d29e07f900ce80bc7a63fc4014405ec072fcf13b5720eb71d463aa22f",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.speaker.low",
+      "sha256": "0cce0224cac3911d588af75f37638c201d14e2b22fbfd6065b7bfb768615b773",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.speaker.mid",
+      "sha256": "bde304b1ec86c9530b397d8052a6fc8f15d800abad45b6fd99a3467299229e5b",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.speaker.high",
+      "sha256": "fc4c024d44be7b3b888e8e2d53853e3a0eb7612da8ad3715e74fbc05f7af859b",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "buttons.vibration",
+      "sha256": "ab23b447902ef22b1557c61bced2721e69883449aad91adbda174bd5c982dc70",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "buttons.volume_up",
+      "sha256": "3703da6587730ddb6a582bb3bc72952b661da41250131c6e38b275b42bbd3db9",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "buttons.volume_down",
+      "sha256": "4510b4e9fed79a6dd64e16871458d1329144c850bb4c3cb1e6951593bb1b920b",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "buttons.power",
+      "sha256": "d5921446707bd00d027aa8749db1c2fcdf6951091b773e831a4522162db2f83f",
+      "classification": "Basic manual observation",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "buttons.back",
+      "sha256": "f38ed06956e2a29eaaec17c35c461b1a9dbb4ce7edea569b5b2e84de446c9171",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "biometric.authentication",
+      "sha256": "a35b30d938b4bf4381a45113df03e160adde008ebb77ed2e7e46d6d2f5852dd2",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "network.wifi_enabled",
+      "sha256": "26a04b399c5e6491cae4adeadd1874aca53d28882d6e21b7015f5be6d7dc30b5",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "network.transport",
+      "sha256": "a455215e4a61bc9af7b06c21d72f219058088f282c7f534f639b9cece7d1c414",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "network.validated",
+      "sha256": "4fcfc091562d95e117dee4643927f7b962b7a4bc197987ea1d475d81f4acbe56",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "network.wifi_link",
+      "sha256": "cd00891026c93340867c15c2ca9a4b9dfa06d4b46350cf0fb98d34bd453f3c0d",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "network.airplane",
+      "sha256": "28ed479339f1b0db5c008ba055b8a2a30d600ebab46cbdaaf8e60f2a30d576e4",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "network.sim_state",
+      "sha256": "2ef5c07c063ff3cd7992b3c63e9fb207f185f28d734e61d3969c2b36a9293894",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "network.nfc_enabled",
+      "sha256": "312641a53d3e0ba6fb0219abbf7d5b0c827b769a98951126f5993efe697eedab",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "network.usb_devices",
+      "sha256": "54486a581fe80cc5dcb51cf37050f4b1b1e895670c65551de58725cd6d40e0a8",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "network.bluetooth_enabled",
+      "sha256": "8ec0b310b0bbbf99730ddd068c7ed6bd1f9028c217b7f14ff293af2ca03284d9",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "network.backend",
+      "sha256": "d5188175316b0e01a883caace8a29afcb76d72ebb6dd4ab4313903eeb08f0bb7",
+      "classification": "Device metadata",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "network.ble_scan",
+      "sha256": "2fd37e5391c06581820cdbd9e45a14828bc63ffc49a8acb9aedfbc644ece39ad",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "gnss.fix",
+      "sha256": "fdd3239eb0d9d44bc1f521b66f540c56391daf788049678b79196e6dd83ac09b",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "gnss.accuracy",
+      "sha256": "dae59cd397284140c1aa7297e290b33faf15d69d4b82ad7747816f2eb52b7a71",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "gnss.satellites",
+      "sha256": "71e30301c4bdb1718eaa653f96a160112f50c1643e3c7ed403268166e72ec590",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "storage.create",
+      "sha256": "df0316870c52847f375cfc76f4e8dd8950a2ef0da11be1f5d89f6c54721d171e",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "storage.write",
+      "sha256": "91614dc10040fb6422821251d0f781d15727882ee9dba1bfdbdf469ba5de70c4",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "storage.read",
+      "sha256": "cda87c5721141df52db20357e101499fa43f474638007f54b5fee899b24af102",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "storage.checksum",
+      "sha256": "3ceed7b82668abea766e5a00616fe83c59e17741d1a0896abe07b189f94a20a9",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "storage.overwrite",
+      "sha256": "669962915073686e8bf95ac394bf540551eb11a89601800107fb9350eb1ccb0e",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "storage.delete",
+      "sha256": "400214ac9d4425559482153904af22b5a19836565860d8d746ad52204410bd31",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "storage.sqlite",
+      "sha256": "9bfd84913c865f4da2a465ff96859266491116d0f17d61072f9eeb93383ac435",
+      "classification": "Genuine functional measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "performance.cpu",
+      "sha256": "f6409549cfbd45975691ac139a36567ce14eead911af10d3274af205028ba0a0",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "performance.memory",
+      "sha256": "f393423dc2a42363ca203ca66dbc9114f95e52ebf8bd29056d03529c3ac3d081",
+      "classification": "Advanced telemetry measurement",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.autofocus_stability",
+      "sha256": "f53bc806339142899646fdfde765602f141bf741c7b3c266df47f7551989f690",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.focus_transition",
+      "sha256": "765eacaf77caaaaff6b353c5db4b085485261d9ae5de1f6e1bba2269589b3c4d",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.ois_operation",
+      "sha256": "3653fb805b258d7052dfc1c68afe82141a94cbaf027e315b0a2f25fe17635591",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.white_balance_response",
+      "sha256": "b70600fbc2fcb8e795e519cdfc5cf27239ad1f8099836ff1a2d37d4ac2baf32a",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.dark_frame",
+      "sha256": "c1eb3c2c9c41e419462dcfdb3dc0636633f6f129b88c9403294bbae70941ad60",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.sharpness",
+      "sha256": "fcefa30ce3e03c706109bbf04520f317aab387c895ce70af3a27c9289d03a885",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.noise",
+      "sha256": "99d37f88f09e5521319de546e95cde716a99829b0ffb674e7ebb653c69911d1d",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.obstruction",
+      "sha256": "23a7894f32962c51d0144bd98d436e9498bf2f9223e6810a22524af3820cf728",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.frame_freeze",
+      "sha256": "393190718ee7cc245701d8adfe6c245eb9f3989fe8dc50f950c30f2e288f7733",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.switch_stress",
+      "sha256": "839599d8542bf67210675765470a9b6bc92e3b33586ef955798f63cb57ed7191",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "camera.high_speed_video",
+      "sha256": "be09fca3fd1f967cac822a07eef524ad5764665f64e57d0ca604f2380f118adc",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.ghost_touch",
+      "sha256": "895b05c38c53a45748a45fb70c3b9f98d4b92f93b88ce5232e734362fd59b045",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.duplicate_anomalies",
+      "sha256": "d537911db4113e398a4a609c5564f3663fb21b9bb0d8c87cc696b9e388bc327b",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.coordinate_alignment",
+      "sha256": "07a38093cc18928117688f1c0f98c08c3f7eefa180f4bea2b3bfc4f9575fa2c7",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "touch.hardware_sampling_rate",
+      "sha256": "c8d76495623869e4b002c4149796288f0726d5da109aa7c25c2f1b7b3f3d53dc",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.earpiece",
+      "sha256": "50242a410eb16b9ea33de9d62105b683e4fa84146bf7f765129656844fe52165",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.speech",
+      "sha256": "3699de2e1c2c02cb641f4f7d0694fa684f07d77cfad81be565d172c59ada6c2e",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.rattle",
+      "sha256": "b9655ec4e6032ff96c35bfc13a9202a9355ee162184e64063734d7af1aa718d2",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.route_loopback",
+      "sha256": "8db2f6656915dfb84b968e989f22e3ef924e0ded7f92838bf9b61c9160bc34ad",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.frequency_response",
+      "sha256": "90c5cc54d656dc35c4579b09e3146609ead62d667f8656a432251ce0b7a6d542",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "audio.stream_continuity",
+      "sha256": "7f592a0f60606c911c6c936a810f3a8098d93c0d46b770605092124e55a6b96b",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.health_percentage",
+      "sha256": "ca1204919adabc102c6dd956d93a1429d986939101da0c703869e655a8c7794a",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.oem_authenticity",
+      "sha256": "23482a1c9d129018577ebc69094c6192a48b619313ddb20ffc80d86c015abe2b",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "battery.current_stability",
+      "sha256": "95531f3e03e8dffbbc2ddc923ec673a14f69a38386772b9dbbccb8e4c96582e8",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "charging.data_pin_health",
+      "sha256": "5b3f4aa928de35d2695c85c35fdb6979d9d9728fb888224e574ca2cabaa1cefe",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "charging.accessory_communication",
+      "sha256": "2d0e92722267b32ef41b1515cf4b56f020dc023ef326c3132bd1d63906109b7a",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "charging.connection_instability",
+      "sha256": "6b74367a09e022b46f3db29d6555baec7164355902dbbffce0b1fec76c1c0ef6",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "storage.random_access",
+      "sha256": "61a77b148b9848b855e31cbbe19b762d16784bd4483a2c51f37f4f1542120750",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "storage.sequential_write",
+      "sha256": "f29048603b36d36a660ce1efd609afca4d1255699f5a940eb2aad99fbd96a728",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "storage.sequential_read",
+      "sha256": "cc9a2f3993b7b044690607303b6eb9b788e6804a7d803d6509a241f1d843f9b3",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "storage.nand_health",
+      "sha256": "7eb00e3af68f7f6360fbf14cf98eb032bd80a92e8ddb6bd1b5bb3db8ad534333",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "security.drm_level",
+      "sha256": "0ceba4e85fe9b42eca9b1c532e1fd10374800f23bff5a65c5ff6cdfc78283d24",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "security.drm_schemes",
+      "sha256": "b4596e6a08fc6d9814cacc597f14ed9fc0a3d147f881aa3f823f31bbe3183317",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "security.remote_attestation",
+      "sha256": "c4d1231c072471b42e54c24077d84f0d9951568aede083ba7358535f932876f3",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "security.motherboard_authenticity",
+      "sha256": "848ea80e83310d371e079b5327d968339cc727729d1ea9f2a5cadd7f14e182a2",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "security.repair_history",
+      "sha256": "5f594c7e42f3295619cf1d27098729655e62e3feaf3b7e1eb4c06ed0500130e0",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "security.liquid_damage",
+      "sha256": "1abfcd53a684eb930d7146edb57aa5f8b547e9dda13ce7b814db6b6e391e5775",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "connectivity.nfc_tag",
+      "sha256": "f03e032d4888682a62b2cbfaa474f81e4f81a28801af9eee1eb96f97a353a878",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "connectivity.uwb_ranging",
+      "sha256": "d7a881eb43f5ad7940b9827d60f5c2d07a72809ac4dbf0da01c4e4d94c350648",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "connectivity.esim_profiles",
+      "sha256": "dc04514033d5da7153a7b172ba89902b7ef02aff5267d73bfa6f0ab4de9b6806",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "connectivity.bluetooth_pairing",
+      "sha256": "efe34179d22e57b4d8f00a05783a9184588fc48fed26e2c07c5a9cff81bcee0e",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "connectivity.dns_latency",
+      "sha256": "23b6a7f4ecc8a593039e7091b2fc48840e2882a3f982b402e91ac368e0880d80",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "connectivity.wifi_reconnect",
+      "sha256": "f0b2d051ae0006dd3281efda012f08c81a626e089f36eb91abbe878368933642",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.auto_brightness",
+      "sha256": "d54a6e043593f3fec64eca1f00616f32a242548190c15a41d1b29c98902f5d99",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.adaptive_refresh",
+      "sha256": "f9a0f2284a63ad7c3e83478866c5bca8bb09435f138bd8ced3cc41d8ac3e0865",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "display.objective_luminance",
+      "sha256": "64b13f2cbdda2843a0342294549644241c1175ae3d42b14a05726ac6b04e3cbc",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensors.stationary_drift",
+      "sha256": "4605e6894ffcff3e004f0916d941613dc743ea258e13c67a864a86d30df25459",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensors.noise_calibration",
+      "sha256": "a636184f0d4f83fd7d975f593ec252721369cdb40d9dd27cb5ebf2d588f8b369",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    },
+    {
+      "id": "sensors.significant_motion",
+      "sha256": "c3ca6b2da0f7bea08835666568c97b8c75a82c0e961133b0576a3efebacc9785",
+      "classification": "Unimplemented or inaccessible capability",
+      "shared_operation": "See workflow inventory"
+    }
+  ]
+}
